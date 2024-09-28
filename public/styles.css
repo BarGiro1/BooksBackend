@@ -1,3 +1,36 @@
-.lkj {
-    font-size: large;
+.form-group {
+    margin: 20px;
+}
+
+.login-container {
+    width: fit-content;
+    height: fit-content;
+}
+
+.login-container input {
+  border: 1px solid #ccc;
+  border-radius: 7px;
+  padding: 10px;
+  font-size: 16px;
+  color: #333;
+  background-color: #fff;
+
+  &:focus {
+    border-color: #007bff;
+    outline: none;
+  }
+
+  &::placeholder {
+    color: #999;
+    font-style: italic;
+  }
+
+  /* Error state (optional) */
+  &.error {
+    border-color: red;
+  }
+}
+
+.login-btn {
+    width: 100px;
 }
