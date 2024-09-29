@@ -2,7 +2,7 @@ $(document).ready(function () {
     console.log("adasd");
     
     $('.login-btn').click(function (e) { 
-        e.preventDefault();
+        // e.preventDefault();
         console.log("hello");
     });
 });
