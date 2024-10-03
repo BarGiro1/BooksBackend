@@ -1,0 +1,31 @@
+<%- include('partials/head', {title: "Home"}); %>
+<body class="d-flex flex-column vh-100">
+    <%- include('partials/header') %>
+    <main class="container vh-75">
+        <div class="container mt-5">
+            <h1 class="text-center mb-4">Book Details</h1>
+            <div id="book-container" class="row justify-content-center d-none" data-book-id="<%= bookId %>">
+                <div class="col-8">
+                    <div class="book-card">
+                        <div class="book-cover">
+                            <h2 id="bookName" class="display-4"></h2>
+                        </div>
+                        <div class="book-info">
+                            <h3 id="bookAuthor" class="mb-3"></h3>
+                            <p id="bookYear" class="text-muted"></p>
+                            <p id="bookGenre"></p>
+                            <p id="bookPages"></p>
+                            <p id="bookPrice" class="fs-4 fw-bold text-primary"></p>
+                        </div>
+                        <button id="add-to-cart" class="btn btn-primary">Add to cart</a>
+                    </div>
+                </div>
+            </div>
+            <div id="error" class="alert alert-danger d-none" role="alert"></div>
+            <div id="added-to-cart" class="alert alert-success d-none" role="alert"></div>
+        </div>
+    </main>
+    <%- include('partials/footer') %>
+    <%- include('partials/scripts', {page: "book"}); %>
+</body>
+</html>

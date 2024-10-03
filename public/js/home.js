@@ -3,7 +3,7 @@ $(document).ready(function () {
 
     $.ajax({ 
         type: 'GET', 
-        url: 'books.json', 
+        url: 'http://localhost:3001/books', 
         data: { get_param: 'value' }, 
         dataType: 'json',
         success: function (data) { 
@@ -17,7 +17,7 @@ $(document).ready(function () {
 
         $(".book-card").each(function () {
             let title = $(this).find(".card-title").text().toLowerCase();
-            let author = $(this).find(".card-text").first().text().toLowerCase();
+            let author = $(this).find(".book-author").text().toLowerCase();
 
             if (title.includes(searchTerm) || author.includes(searchTerm)) {
                 $(this).show();  
@@ -37,15 +37,18 @@ $(document).ready(function () {
         $.each(books, function (index, book) { 
             console.log(book.author);
             html += `
-            <div class="card book-card col-2 me-4 mb-4">
-                <img src="/api/placeholder/400/300" class="card-img-top" alt="${book.title}">
-                <div class="card-body">
-                    <h5 class="card-title">${book.title}</h5>
-                    <p class="card-text">Author: ${book.author}</p>
-                    <p class="card-text">Year: ${book.year}</p>
-                    <p class="card-text">Pages: ${book.pages}</p>
-                </div>
-            </div>
+                <a href="book/${book._id}" class="text-decoration-none col-2 me-4 mb-4">
+                    <div class="card book-card">
+                        <img src="/api/placeholder/400/300" class="card-img-top" alt="${book.name}">
+                        <div class="card-body">
+                            <h5 class="card-title">${book.name}</h5>
+                            <p class="card-text">Author: <span class="book-author">${book.author}</span></p>
+                            <p class="card-text">Year: ${book.publicationYear}</p>
+                            <p class="card-text">Pages: ${book.numOfPages}</p>
+                            <p class="card-text">Price: ${book.price}</p>
+                        </div>
+                    </div>
+                </a>
             `
         });
         booksContainer.html(html)
