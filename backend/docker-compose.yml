@@ -1,0 +1,27 @@
+version: '3.8'
+services:
+  mongo:
+    image: mongo:latest
+    container_name: mongo
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+
+  books-app:
+    image: node:latest
+    container_name: express-app
+    ports:
+      - "3001:3001"
+    depends_on:
+      - mongo
+    environment:
+      MONGO_URI: mongodb://mongo:27017/library
+      JWT_SECRET: secret
+    volumes:
+      - ./app:/app
+    working_dir: /app
+    command: npm start
+
+volumes:
+  mongo_data:
