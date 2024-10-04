@@ -5,7 +5,18 @@
         <li><a href="/orders" class="nav-link px-2 link-dark">Orders</a></li>
     </ul>
 
-    <div class="navbar-login text-end">
+
+    <div class="dropdown me-2">
+        <button class="btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+          Admin Pages
+        </button>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" href="admin/orders">Manage Orders</a></li>
+          <li><a class="dropdown-item" href="admin/users">Manage Users</a></li>
+          <li><a class="dropdown-item" href="admin/books">Manage Books</a></li>
+        </ul>
+      </div>
+    <div class="navbar-login text-end d-none">
         <a class="btn btn-outline-primary me-2" href="/login" role="button">Login</a>
         <a class="btn btn-primary me-2" href="/signup" role="button">Sign Up</a>
     </div>

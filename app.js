@@ -23,4 +23,8 @@ app.get("/book/:id", (req, res) => {
     res.render("book", { bookId: bookId })
 });
 
+app.get("/admin/users", (req, res) => {
+    res.render("usersPage")
+});
+
 app.listen(3000);
