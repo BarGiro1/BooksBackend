@@ -46,7 +46,7 @@ server.listen(SOCKET_PORT, () => {
 
 //routes
 app.use('/books', require('./routes/books.routes'));
-
+app.use('/users', require('./routes/users.routes'));
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
     connectDB();
