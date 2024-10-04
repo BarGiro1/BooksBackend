@@ -27,4 +27,13 @@ app.get("/admin/users", (req, res) => {
     res.render("usersPage")
 });
 
+app.get('/cart', (req, res) => {
+    res.render('cart');
+});
+
+app.get('/order', (req, res) => {
+    res.render('order');
+});
+
 app.listen(3000);
+
