@@ -19,4 +19,11 @@ app.get('/signup', (req, res) => {
     res.render('signup')
 });
 
+app.get('/cart', (req, res) => {
+    res.render('cart');
+});
+
+app.get('/order', (req, res) => {
+    res.render('order');
+});
 app.listen(3000);

@@ -18,6 +18,7 @@ $(document).ready(function () {
         $(".book-card").each(function () {
             let title = $(this).find(".card-title").text().toLowerCase();
             let author = $(this).find(".card-text").first().text().toLowerCase();
+            let price = $(this).find(".card-text").first().text().toLowerCase();
 
             if (title.includes(searchTerm) || author.includes(searchTerm)) {
                 $(this).show();  
@@ -25,6 +26,7 @@ $(document).ready(function () {
                 $(this).hide(); 
             }
         });
+        
         
         
     });
@@ -43,7 +45,9 @@ $(document).ready(function () {
                     <h5 class="card-title">${book.title}</h5>
                     <p class="card-text">Author: ${book.author}</p>
                     <p class="card-text">Year: ${book.year}</p>
-                    <p class="card-text">Pages: ${book.pages}</p>
+                    <p>Price: $${book.price}</p>
+                    <button class="add-to-cart-btn" data-price=${book.price} data-title="${book.title}" data-author="${book.author}">Add to Cart</button>
+
                 </div>
             </div>
             `
@@ -51,5 +55,22 @@ $(document).ready(function () {
         booksContainer.html(html)
 
     }
+
+    $(document).on('click', '.add-to-cart-btn', function () {
+        const title = $(this).data('title');
+        const author = $(this).data('author');
+        const price = $(this).data('price');
+
+
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+        console.log('Cart before adding:', cart);
+
+        cart.push({ title, author, price });
+
+        localStorage.setItem('cart', JSON.stringify(cart));
+
+        alert(`${title} added to cart!`);
+    });
 
 });
