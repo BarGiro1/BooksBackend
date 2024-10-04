@@ -98,6 +98,21 @@ const updateUser = async (id, updatedUserData) => {
     }
 }
 
+// Add an order to a user
+const addOrderToUser = async (id, orderID) => {
+    if (!id || !orderID) throw new Error('User ID and Order ID are required');
+    
+    try {
+        const user = await User.findById(id);
+        if (!user) throw new Error('User not found');
+
+        user.orders.push(orderID);
+        await updateUser(id, user);
+        return orderID;
+    } catch (error) {
+        throw new Error(error.message);
+    }
+}
 
 // Add books to a user
 const addBooksToUser = async (id, books) => {
@@ -116,6 +131,7 @@ const addBooksToUser = async (id, books) => {
 }
 
 module.exports = {
+    addOrderToUser,
     addBooksToUser,
     getAllUsers,
     getUserById,
