@@ -12,7 +12,7 @@ const socketio = require("socket.io");
 const { setSocket } = require('./config/sockets');
 
 
-const PORT = process.env.PORT || 5001;
+const PORT = process.env.PORT || 5801;
 const SOCKET_PORT = process.env.SOCKET_PORT || 3001;
 
 
@@ -48,8 +48,8 @@ server.listen(SOCKET_PORT, () => {
 app.use('/books', require('./routes/books.routes'));
 app.use('/users', require('./routes/users.routes'));
 app.use('/orders', require('./routes/orders.routes'));
-app.use('/auth', require('./routes/auth.routes'));
-app.use('/admin', require('./routes/admin.routes'));
+// app.use('/auth', require('./routes/auth.routes'));
+// app.use('/admin', require('./routes/admin.routes'));
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
     connectDB();
