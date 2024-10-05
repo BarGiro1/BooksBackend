@@ -14,8 +14,8 @@ const { setSocket } = require('./config/sockets');
 const { addData } = require('./init/data.init')
 
 
-const PORT = process.env.PORT || 5801;
-const SOCKET_PORT = process.env.SOCKET_PORT || 3021;
+const PORT = process.env.PORT || 5001;
+const SOCKET_PORT = process.env.SOCKET_PORT || 3001;
 
 
 
