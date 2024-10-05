@@ -3,8 +3,6 @@ const bookService = require('../functions/books.service');
 const userService = require('../functions/users.service');
 const jwt = require('jsonwebtoken');
 const {getSocket} = require('../config/sockets');
-
-
 const getAllOrders = async (req, res) => {
     try {
         const allOrders = await ordersService.getAllOrders();
@@ -13,7 +11,6 @@ const getAllOrders = async (req, res) => {
         res.status(500).json({ message: error.message });
     }
 }
-
 const getOrdersByUser = async (req, res) => {
     try {
         const userId = req.params.user;
@@ -23,7 +20,6 @@ const getOrdersByUser = async (req, res) => {
         res.status(500).json({ message: error.message });
     }
 }
-
 const getOrderById = async (req, res) => {
     try {
         const orderId = req.params.id;
@@ -33,7 +29,6 @@ const getOrderById = async (req, res) => {
         res.status(500).json({ message: error.message });
     }
 }
-
 const createOrder = async (req, res) => {
     try {
         const {order, token} = req.body;
@@ -49,7 +44,6 @@ const createOrder = async (req, res) => {
         for(let i = 0; i < selectedBooks.length; i++){
             bookService.increaseNumOfPurchases(selectedBooks[i]._id);
         }
-
         userDetails.orders.push(createdOrder._id);
         userDetails.books.push(...selectedBooks.filter(book => !userDetails.books.includes(book._id)));
         userService.updateUser(userDetails._id, userDetails);
@@ -64,7 +58,6 @@ const createOrder = async (req, res) => {
         res.status(500).json({ message: error.message });
     }
 }
-
 const deleteOrder = async (req, res) => {
     try {
         const orderId = req.params.orderId;
@@ -103,7 +96,6 @@ const deleteAllOrders = async (req, res) => {
         res.status(500).json({ message: error.message });
     }
 }
-
 const updateOrder = async (req, res) => {
     try {
         const orderId = req.params.orderId;
@@ -133,7 +125,6 @@ const updateOrder = async (req, res) => {
         res.status(500).json({ message: error.message });
     }
 }
-
 module.exports = {
     createOrder,
     getOrderById,

@@ -14,12 +14,10 @@ const getOrdersByUser = async (user) => {
         throw new Error(error.message);
     }
 }
-
 // Create a new order
 const createOrder = async (orderData) => {
     const { user, books } = orderData;
     if (!user || !books || !books.length) throw new Error('User and books are required');
-
     try {
         const newOrder = new Order({ user, books });
         await newOrder.save();
@@ -28,7 +26,6 @@ const createOrder = async (orderData) => {
         throw new Error(error.message);
     }
 }
-
 // Fetch all orders
 const getAllOrders = async () => {
     try {
@@ -38,11 +35,9 @@ const getAllOrders = async () => {
         throw new Error(error.message);
     }
 }
-
 // Delete an order by ID
 const deleteOrder = async (id) => {
     if (!id) throw new Error('Order ID is required');
-    
     try {
         const order = await Order.findByIdAndDelete(id);
         if (!order) throw new Error('Order not found');
@@ -51,12 +46,10 @@ const deleteOrder = async (id) => {
         throw new Error(error.message);
     }
 }
-
 // Update an order by ID
 const updateOrder = async (id, updatedOrderData) => {
     if (!id) throw new Error('Order ID is required');
-    if (!updatedOrderData) throw new Error('Updated order data is required');
-    
+    if (!updatedOrderData) throw new Error('Updated order data is required');    
     try {
         const updatedOrder = await Order.findByIdAndUpdate(id, updatedOrderData, { new: true });
         if (!updatedOrder) throw new Error('Order not found');
@@ -65,11 +58,9 @@ const updateOrder = async (id, updatedOrderData) => {
         throw new Error(error.message);
     }
 }
-
 // Fetch an order by ID
 const getOrderById = async (id) => {
     if (!id) throw new Error('Order ID is required');
-    
     try {
         const order = await Order.findById(id);
         if (!order) throw new Error('Order not found');
@@ -78,13 +69,11 @@ const getOrderById = async (id) => {
         throw new Error(error.message);
     }
 }
-
 // Delete all orders and clean up associated user books and purchases
 const deleteAllOrders = async () => {
     try {
         const orders = await Order.deleteMany();
         if (!orders) throw new Error('No orders found to delete');
-
         // Clean up user books and book purchases
         for (let order of orders) {
             const user = await usersService.getUserById(order.user);
