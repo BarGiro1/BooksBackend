@@ -1,5 +1,5 @@
 const bookServiceModule = require('../functions/books.service');
-const curlRequest = require('curl');
+
 const getAllBooks = async (req, res) => {
     try {
         const allBooksData = await bookServiceModule.getAllBooks();

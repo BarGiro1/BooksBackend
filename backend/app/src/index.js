@@ -11,6 +11,7 @@ const session = require('express-session');
 const flash = require('express-flash');
 const socketio = require("socket.io");
 const { setSocket } = require('./config/sockets');
+const { addData } = require('./init/data.init')
 
 
 const PORT = process.env.PORT || 5801;
@@ -56,10 +57,12 @@ app.use('/users', require('./routes/users.routes'));
 app.use('/orders', require('./routes/orders.routes'));
 app.use('/statistics', require('./routes/statistics.routes'));
 app.use('/auth', require('./routes/auth.routes'));
+app.use('/health', require('./routes/health.routes'));
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
     connectDB();
 });
 
-
-
+console.log('Adding Initial Data to the DB')
+addData();
+console.log('Done')
