@@ -57,7 +57,6 @@ app.use('/users', require('./routes/users.routes'));
 app.use('/orders', require('./routes/orders.routes'));
 app.use('/statistics', require('./routes/statistics.routes'));
 app.use('/auth', require('./routes/auth.routes'));
-app.use('/health', require('./routes/health.routes'));
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
     connectDB();
