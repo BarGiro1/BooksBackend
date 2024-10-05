@@ -11,6 +11,16 @@ const createBranch = async (req, res) => {
 };
 
 // Get all branches
+const getAllBranches = async (req, res) => { // Ensure this matches your route
+    try {
+        const branches = await branchService.getAllBranches();
+        res.status(200).json(branches);
+    } catch (error) {
+        res.status(500).json({ message: error.message });
+    }
+};
+
+// Get all branches
 const getBranches = async (req, res) => {
     try {
         const branches = await branchService.getAllBranches();
@@ -59,5 +69,6 @@ module.exports = {
     getBranches,
     getBranchById,
     updateBranch,
-    deleteBranch
+    deleteBranch,
+    getAllBranches
 };
