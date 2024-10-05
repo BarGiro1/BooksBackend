@@ -15,7 +15,7 @@ const { addData } = require('./init/data.init')
 
 
 const PORT = process.env.PORT || 5801;
-const SOCKET_PORT = process.env.SOCKET_PORT || 3001;
+const SOCKET_PORT = process.env.SOCKET_PORT || 3021;
 
 
 
@@ -49,7 +49,7 @@ server.listen(SOCKET_PORT, () => {
 });
 
 //routes
-app.use('/branches', require('./routes/branch.routes'));
+// app.use('/branches', require('./routes/branches.routes'));
 app.use('/admin', require('./routes/admin.routes'));
 app.use('/users', require('./routes/users.routes'));
 app.use('/books', require('./routes/books.routes'));
