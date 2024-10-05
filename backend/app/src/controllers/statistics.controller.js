@@ -14,7 +14,7 @@ const getMonthlyAveragePurchases = async () => {
                     totalBooksPurchased: { $sum: { $size: "$books" } }  // Sum of books in each order
                 }
             },
-            // Calculate the average of total books purchased per month
+            
             {
                 $group: {
                     _id: null, // 
@@ -57,9 +57,9 @@ const getOrdersByAuthor = async (author) => {
             },
             {
                 $group: {
-                    _id: '$_id', // Group back by order ID
-                    books: { $push: '$orderedBooks' }, // Collect ordered books
-                    date: { $first: '$date' } // Get the date of the order
+                    _id: '$_id', 
+                    books: { $push: '$orderedBooks' }, 
+                    date: { $first: '$date' } 
                 }
             }
         ]);
@@ -81,7 +81,7 @@ const getSalesPerBook = async () => {
                     from: 'books', 
                     localField: 'books', 
                     foreignField: '_id',
-                    as: 'orderedBooks' // Name for the joined documents
+                    as: 'orderedBooks' 
                 }
             },
             {
@@ -91,7 +91,7 @@ const getSalesPerBook = async () => {
                 $group: {
                     _id: '$orderedBooks._id', 
                     name: { $first: '$orderedBooks.name' },
-                    totalSales: { $sum: 1 } // Count each occurrence (sale)
+                    totalSales: { $sum: 1 } 
                 }
             },
             {
