@@ -49,8 +49,8 @@ server.listen(SOCKET_PORT, () => {
 
 //routes
 
-
-
+app.use('/admin', require('./routes/admin.routes'));
+app.use('/users', require('./routes/users.routes'));
 app.use('/books', require('./routes/books.routes'));
 app.use('/users', require('./routes/users.routes'));
 app.use('/orders', require('./routes/orders.routes'));
