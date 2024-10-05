@@ -39,7 +39,7 @@ const logoutAuth = (req, res, next) =>{
 
 //checks if the user has filled all the fields correctly
 const updatedUserAuth = (req, res, next) =>{
-    const {name, email, password} = req.body.updatedUser;
+    const {name, email, password} = req.body.updatedUserDetails;
     if (!name || !email || !password) {
         return res.status(400).json({ error: "Please fill all the fields" });
     }
