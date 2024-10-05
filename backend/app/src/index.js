@@ -62,6 +62,6 @@ app.listen(PORT, () => {
     connectDB();
 });
 
-console.log('Adding Initial Data to the DB')
-addData();
+// console.log('Adding Initial Data to the DB')
+// addData();
 console.log('Done')
