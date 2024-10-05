@@ -94,6 +94,8 @@ $(document).ready(function () {
                             <p class="card-text">Year: ${book.publicationYear}</p>
                             <p class="card-text">Pages: ${book.numOfPages}</p>
                             <p class="card-text">Price: ${book.price}</p>
+                            <button class="add-to-cart-btn" data-price=${book.price} data-title="${book.name}" data-author="${book.author}">Add to Cart</button>
+
                         </div>
                     </div>
                 </a>
@@ -119,30 +121,6 @@ $(document).ready(function () {
         });
     });
 
-    function renderBooks() {
-        console.log(books);
-        let html = ''
-        booksContainer = $('.books-continer')
-
-        $.each(books, function (index, book) { 
-            console.log(book.author);
-            html += `
-            <div class="card book-card col-2 me-4 mb-4">
-                <img src="/api/placeholder/400/300" class="card-img-top" alt="${book.title}">
-                <div class="card-body">
-                    <h5 class="card-title">${book.title}</h5>
-                    <p class="card-text">Author: ${book.author}</p>
-                    <p class="card-text">Year: ${book.year}</p>
-                    <p>Price: $${book.price}</p>
-                    <button class="add-to-cart-btn" data-price=${book.price} data-title="${book.title}" data-author="${book.author}">Add to Cart</button>
-
-                </div>
-            </div>
-            `
-        });
-        booksContainer.html(html)
-
-    }
 
     $(document).on('click', '.add-to-cart-btn', function () {
         const title = $(this).data('title');
