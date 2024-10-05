@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 
+
 const BranchSchema = new mongoose.Schema({
     name: {
         type: String,
@@ -30,13 +31,6 @@ const BranchSchema = new mongoose.Schema({
             minlength: 2,
             maxlength: 100
         }
-    },
-    phoneNumber: {
-        type: String,
-        required: true,
-        trim: true,
-        minlength: 7,
-        maxlength: 15
     }
 });
 
