@@ -15,7 +15,7 @@ const { addData } = require('./init/data.init')
 
 
 const PORT = process.env.PORT || 5001;
-const SOCKET_PORT = process.env.SOCKET_PORT || 3201;
+const SOCKET_PORT = process.env.SOCKET_PORT || 3001;
 
 
 
