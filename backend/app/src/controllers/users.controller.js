@@ -62,7 +62,6 @@ const createUser = async (request, response) => {
         response.status(500).json({ message: errorInstance.message });
     }
 }
-
 const deleteUser = async (request, response) => {
     try {
         const userEntity = await userServiceFunctionality.deleteUser(request.params.userId);
@@ -71,9 +70,9 @@ const deleteUser = async (request, response) => {
         response.status(500).json({ message: errorInstance.message });
     }
 }
-
 const updateUser = async (request, response) => {
     try {
+
         const userIdParams = request.params.userId;
         const { token, updatedUserDetails } = request.body;
         const decodedToken = jsonWebToken.decode(token);
@@ -119,7 +118,6 @@ const login = async (request, response) => {
         response.status(500).json({ message: errorInstance.message });
     }
 }
-
 const logout = async (request, response) => {
     try {
         request.session.destroy();
@@ -137,7 +135,6 @@ const getUserBooks = async (request, response) => {
         response.status(500).json({ message: errorInstance.message });
     }
 }
-
 const addBookToUser = async (request, response) => {
     try {
         const userEntity = await userServiceFunctionality.addBooksToUser(request.params.id, request.body);
@@ -146,7 +143,6 @@ const addBookToUser = async (request, response) => {
         response.status(500).json({ message: errorInstance.message });
     }
 }
-
 const removeBookFromUser = async (request, response) => {
     try {
         const userEntity = await userServiceFunctionality.removeBookFromUser(request.params.id, request.body);
@@ -172,7 +168,6 @@ const isBookExist = async (request, response) => {
         response.status(500).json({ message: errorInstance.message });
     }
 }
-
 module.exports = {
     getAllUsers,
     getUserById,

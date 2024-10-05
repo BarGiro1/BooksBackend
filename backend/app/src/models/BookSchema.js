@@ -1,5 +1,4 @@
 const mongoose = require('mongoose');
-
 const BookSchema = new mongoose.Schema({
 
     name: {
@@ -16,21 +15,21 @@ const BookSchema = new mongoose.Schema({
         minlength: 3,
         maxlength: 100
     },
-    publicationYear: {
+    publicationYear:{
         type: Number,
         required: true,
         trim: true,
         minlength: 4,
         maxlength: 4
     },
-    genre: {
+    genre:{
         type: [String],
         trim: true,
         minlength: 3,
         maxlength: 100,
         default: [],
     },
-    numOfPages: {
+    numOfPages:{
         type: Number,
         required: true,
         trim: true,
@@ -51,5 +50,4 @@ const BookSchema = new mongoose.Schema({
         min: 0
     },
 });
-
 module.exports = mongoose.model('book', BookSchema, 'books')

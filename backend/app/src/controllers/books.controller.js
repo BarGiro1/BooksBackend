@@ -1,6 +1,5 @@
 const bookServiceModule = require('../functions/books.service');
 const curlRequest = require('curl');
-
 const getAllBooks = async (req, res) => {
     try {
         const allBooksData = await bookServiceModule.getAllBooks();
@@ -9,7 +8,6 @@ const getAllBooks = async (req, res) => {
         res.status(500).json({ message: serviceError.message });
     }
 }
-
 const getBooksByIds = async (req, res) => {
     try {
         const { ids } = req.body;
@@ -39,7 +37,6 @@ const getBooksByGenre = async (req, res) => {
         res.status(500).json({ message: serviceError.message });
     }
 }
-
 const getBooksByYear = async (req, res) => {
     try {
         const { year } = req.params;
@@ -84,7 +81,6 @@ const createBook = async (req, res) => {
         res.status(409).json({ message: serviceError.message });
     }
 }
-
 const deleteBook = async (req, res) => {
     try {
         const bookIdParam = req.params.bookId;
@@ -94,7 +90,6 @@ const deleteBook = async (req, res) => {
         res.status(500).json({ message: serviceError.message });
     }
 }
-
 const updateBook = async (req, res) => {
     try {
         const bookIdParam = req.params.bookId;
@@ -113,7 +108,6 @@ const updateBook = async (req, res) => {
         res.status(500).json({ message: serviceError.message });
     }
 }
-
 module.exports = {
     getAllBooks,
     getBooksByIds,

@@ -1,6 +1,5 @@
 const User = require('../models/UserScheme');
 
-// Get user by name
 const getUserByName = async (name) => {
     if (!name) throw new Error('Name is required');
     
@@ -11,8 +10,6 @@ const getUserByName = async (name) => {
         throw new Error(error.message);
     }
 }
-
-// Get all users
 const getAllUsers = async () => {
     try {
         const users = await User.find();
@@ -21,11 +18,8 @@ const getAllUsers = async () => {
         throw new Error(error.message);
     }
 }
-
-// Get user by email
 const getUserByEmail = async (email) => {
     if (!email) throw new Error('Email is required');
-    
     try {
         const user = await User.findOne({ email });
         return user || null;
@@ -33,11 +27,8 @@ const getUserByEmail = async (email) => {
         throw new Error(error.message);
     }
 }
-
-// Get user by ID with populated orders and books
 const getUserById = async (id) => {
     if (!id) throw new Error('Id is required');
-    
     try {
         const user = await User.findById(id).populate({
             path: 'orders',
@@ -51,8 +42,6 @@ const getUserById = async (id) => {
         throw new Error(error.message);
     }
 }
-
-// Create a new user
 const createUser = async (userData) => {
     if (!userData) throw new Error('User data is required');
     
@@ -74,10 +63,8 @@ const createUser = async (userData) => {
     }
 }
 
-// Delete a user by ID
 const deleteUser = async (id) => {
     if (!id) throw new Error('Id is required');
-    
     try {
         const user = await User.findByIdAndDelete(id);
         return user || null;
@@ -85,8 +72,6 @@ const deleteUser = async (id) => {
         throw new Error(error.message);
     }
 }
-
-// Update a user by ID
 const updateUser = async (id, updatedUserData) => {
     if (!id || !updatedUserData) throw new Error('Id and updated user data are required');
     
@@ -97,11 +82,8 @@ const updateUser = async (id, updatedUserData) => {
         throw new Error(error.message);
     }
 }
-
-// Add an order to a user
 const addOrderToUser = async (id, orderID) => {
     if (!id || !orderID) throw new Error('User ID and Order ID are required');
-    
     try {
         const user = await User.findById(id);
         if (!user) throw new Error('User not found');
@@ -113,11 +95,8 @@ const addOrderToUser = async (id, orderID) => {
         throw new Error(error.message);
     }
 }
-
-// Add books to a user
 const addBooksToUser = async (id, books) => {
     if (!id || !books || !books.length) throw new Error('User ID and books are required');
-    
     try {
         const user = await User.findById(id);
         if (!user) throw new Error('User not found');
@@ -129,7 +108,6 @@ const addBooksToUser = async (id, books) => {
         throw new Error(error.message);
     }
 }
-
 module.exports = {
     addOrderToUser,
     addBooksToUser,

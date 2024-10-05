@@ -1,6 +1,6 @@
 const Book = require('../models/BookSchema');
 
-// Fetch books by genre
+//Fetch books by genre
 const getBooksByGenre = async (genre) => {
     if (!genre) throw new Error('Genre is required');
     try {
@@ -11,8 +11,7 @@ const getBooksByGenre = async (genre) => {
         throw new Error(error.message);
     }
 }
-
-// Fetch books by a list of IDs
+//Fetch books by a list of IDs
 const getBooksByIds = async (ids) => {
     if (!ids || !ids.length) throw new Error('Ids are required');
     try {
@@ -23,8 +22,7 @@ const getBooksByIds = async (ids) => {
         throw new Error(error.message);
     }
 }
-
-// Fetch books by author name
+//Fetch books by author name
 const getBooksByAuthor = async (author) => {
     if (!author) throw new Error('Author is required');
     try {
@@ -35,8 +33,7 @@ const getBooksByAuthor = async (author) => {
         throw new Error(error.message);
     }
 }
-
-// Fetch books by publication year
+//Fetch books by publication year
 const getBooksByPublicationYear = async (publicationYear) => {
     if (!publicationYear) throw new Error('Year is required');
     try {
@@ -58,7 +55,7 @@ const getAllBooks = async () => {
     }
 }
 
-// Fetch a book by its ID
+//Fetch a book by its ID
 const getBookById = async (id) => {
     if (!id) throw new Error('Id is required');
     try {
@@ -69,8 +66,7 @@ const getBookById = async (id) => {
         throw new Error(error.message);
     }
 }
-
-// Create a new book
+//Create a new book
 const createBook = async (bookData) => {
     const { name, author, publicationYear, numOfPages, price } = bookData;
     if (!name || !author || publicationYear === undefined || numOfPages === undefined || price === undefined) {
@@ -87,7 +83,6 @@ const createBook = async (bookData) => {
         throw new Error(error.message);
     }
 }
-
 // Update a book by its ID
 const updateBook = async (id, updatedData) => {
     const { name, author, publicationYear, numOfPages, price } = updatedData;
@@ -95,7 +90,6 @@ const updateBook = async (id, updatedData) => {
     if (!name || !author || publicationYear === undefined || numOfPages === undefined || price === undefined) {
         throw new Error('Missing required fields');
     }
-
     try {
         const updatedBook = await Book.findByIdAndUpdate(id, updatedData, { new: true });
         if (!updatedBook) throw new Error('Book not found or could not be updated');
@@ -104,7 +98,6 @@ const updateBook = async (id, updatedData) => {
         throw new Error(error.message);
     }
 }
-
 // Delete a book by its ID
 const deleteBook = async (id) => {
     if (!id) throw new Error('Id is required');
@@ -117,11 +110,9 @@ const deleteBook = async (id) => {
         throw new Error(error.message);
     }
 }
-
 // Increment the number of purchases for a book
 const increaseNumOfPurchases = async (id) => {
     if (!id) throw new Error('Id is required');
-    
     try {
         const book = await Book.findById(id);
         if (!book) throw new Error('Book not found');
