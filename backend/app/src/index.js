@@ -49,7 +49,7 @@ server.listen(SOCKET_PORT, () => {
 });
 
 //routes
-
+app.use('/branches', require('./routes/branch.routes'));
 app.use('/admin', require('./routes/admin.routes'));
 app.use('/users', require('./routes/users.routes'));
 app.use('/books', require('./routes/books.routes'));
