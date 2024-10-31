@@ -17,15 +17,31 @@ const getOrdersByUser = async (user) => {
 // Create a new order
 const createOrder = async (orderData) => {
     const { user, books } = orderData;
+
+    // Validate input
     if (!user || !books || !books.length) throw new Error('User and books are required');
+
     try {
-        const newOrder = new Order({ user, books });
+        // Fetch book details to calculate the total price
+        const bookDocs = await Book.find({ _id: { $in: books } });
+
+        // Calculate total price by summing the prices of the books
+        const totalPrice = bookDocs.reduce((total, book) => total + book.price, 0);
+
+        // Create the new order with totalPrice
+        const newOrder = new Order({
+            user,
+            books,
+            totalPrice
+        });
+
+        // Save the new order to the database
         await newOrder.save();
         return newOrder;
     } catch (error) {
         throw new Error(error.message);
     }
-}
+};
 // Fetch all orders
 const getAllOrders = async () => {
     try {
