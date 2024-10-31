@@ -1,38 +1,106 @@
-const statisticsService = require('../functions/statistics.service');
-
-
-const getMonthlyAveragePurchases = async (req, res) => {
+const getMonthlyAveragePurchases = async () => {
     try {
-        const sales = await statisticsService.getLastTenDaysSales();
-        res.status(200).json(sales);
+        const result = await Order.aggregate([
+            {
+                $group: {
+                    _id: { 
+                        month: { $month: "$date" }, 
+                        year: { $year: "$date" }
+                    },
+                    totalBooksPurchased: { $sum: { $size: "$books" } }  // Sum of books in each order
+                }
+            },
+            
+            {
+                $group: {
+                    _id: null, // 
+                    averagePurchasesPerMonth: { $avg: "$totalBooksPurchased" }
+                }
+            }
+        ]);
+
+        console.log(result);
+        return result;
     } catch (error) {
-        res.status(500).json({message: error.message});
+        console.error("Error in aggregation: ", error);
     }
-}
+};
 
 
-const getOrdersByAuthor = async (req, res) => {
+
+const getOrdersByAuthor = async (author) => {
+    if (!author) {
+        throw new Error('Author is required');
+    }
+
     try {
-        const sales = await statisticsService.getOrdersByAuthor();
-        res.status(200).json(sales);
+        const orders = await Order.aggregate([
+            {
+                $lookup: {
+                    from: 'books', 
+                    localField: 'books', 
+                    foreignField: '_id', 
+                    as: 'orderedBooks' 
+                }
+            },
+            {
+                $unwind: '$orderedBooks' // Deconstructs the orderedBooks array
+            },
+            {
+                $match: {
+                    'orderedBooks.author': author 
+                }
+            },
+            {
+                $group: {
+                    _id: '$_id', 
+                    books: { $push: '$orderedBooks' }, 
+                    date: { $first: '$date' } 
+                }
+            }
+        ]);
+
+        return orders;
     } catch (error) {
-        res.status(500).json({message: error.message});
+        console.error('Error retrieving orders by author: ', error);
+        throw new Error(error.message);
     }
-}
+};
 
 
 
-const getSalesPerBook = async (req, res) => {
+const getSalesPerBook = async () => {
     try {
-        const sales = await statisticsService.getSalesPerBook();
-        res.status(200).json(sales);
+        const salesData = await Order.aggregate([
+            {
+                $lookup: {
+                    from: 'books', 
+                    localField: 'books', 
+                    foreignField: '_id',
+                    as: 'orderedBooks' 
+                }
+            },
+            {
+                $unwind: '$orderedBooks' // Deconstruct the orderedBooks array
+            },
+            {
+                $group: {
+                    _id: '$orderedBooks._id', 
+                    name: { $first: '$orderedBooks.name' },
+                    totalSales: { $sum: 1 } 
+                }
+            },
+            {
+                $sort: { totalSales: -1 } 
+            }
+        ]);
+
+        return salesData;
     } catch (error) {
-        res.status(500).json({message: error.message});
+        console.error('Error retrieving sales per book: ', error);
+        throw new Error(error.message);
     }
-}
-
-
-
+};
 
 module.exports = {
     getMonthlyAveragePurchases,
