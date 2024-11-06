@@ -103,7 +103,7 @@ const getOrdersByAuthor = async (author) => {
 };
 
 
-export const getMonthlyOrders = async () => {
+const getMonthlyOrders = async () => {
     try {
         const sales = await Order.aggregate([
             {
@@ -181,5 +181,4 @@ module.exports = {
     getSalesPerBook,
     getLastTenDaysSales,
     getMonthlyOrders
-    
 }
