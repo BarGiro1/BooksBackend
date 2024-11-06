@@ -38,5 +38,14 @@ app.get("/admin/books", (req, res) => {
 app.get("/admin/statistics", (req, res) => {
     res.render("statistics");
 });
+  
+app.get('/cart', (req, res) => {
+    res.render('cart');
+});
+
+app.get('/order', (req, res) => {
+    res.render('order');
+});
 
 app.listen(3000);
+

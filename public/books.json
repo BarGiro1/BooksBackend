@@ -5,7 +5,7 @@
       "imageLink": "images/things-fall-apart.jpg",
       "language": "English",
       "link": "https://en.wikipedia.org/wiki/Things_Fall_Apart\n",
-      "pages": 209,
+      "price": 209,
       "title": "Things Fall Apart",
       "year": 1958
     },
@@ -15,7 +15,7 @@
       "imageLink": "images/fairy-tales.jpg",
       "language": "Danish",
       "link": "https://en.wikipedia.org/wiki/Fairy_Tales_Told_for_Children._First_Collection.\n",
-      "pages": 784,
+      "price": 784,
       "title": "Fairy tales",
       "year": 1836
     },
@@ -25,7 +25,7 @@
       "imageLink": "images/the-divine-comedy.jpg",
       "language": "Italian",
       "link": "https://en.wikipedia.org/wiki/Divine_Comedy\n",
-      "pages": 928,
+      "price": 928,
       "title": "The Divine Comedy",
       "year": 1315
     },
@@ -35,7 +35,7 @@
       "imageLink": "images/the-epic-of-gilgamesh.jpg",
       "language": "Akkadian",
       "link": "https://en.wikipedia.org/wiki/Epic_of_Gilgamesh\n",
-      "pages": 160,
+      "price": 160,
       "title": "The Epic Of Gilgamesh",
       "year": -1700
     },
@@ -45,7 +45,7 @@
       "imageLink": "images/the-book-of-job.jpg",
       "language": "Hebrew",
       "link": "https://en.wikipedia.org/wiki/Book_of_Job\n",
-      "pages": 176,
+      "price": 176,
       "title": "The Book Of Job",
       "year": -600
     },
@@ -55,7 +55,7 @@
       "imageLink": "images/one-thousand-and-one-nights.jpg",
       "language": "Arabic",
       "link": "https://en.wikipedia.org/wiki/One_Thousand_and_One_Nights\n",
-      "pages": 288,
+      "price": 288,
       "title": "One Thousand and One Nights",
       "year": 1200
     },
@@ -65,7 +65,7 @@
       "imageLink": "images/njals-saga.jpg",
       "language": "Old Norse",
       "link": "https://en.wikipedia.org/wiki/Nj%C3%A1ls_saga\n",
-      "pages": 384,
+      "price": 384,
       "title": "Nj\u00e1l's Saga",
       "year": 1350
     },
@@ -75,7 +75,7 @@
       "imageLink": "images/pride-and-prejudice.jpg",
       "language": "English",
       "link": "https://en.wikipedia.org/wiki/Pride_and_Prejudice\n",
-      "pages": 226,
+      "price": 226,
       "title": "Pride and Prejudice",
       "year": 1813
     },
@@ -85,7 +85,7 @@
       "imageLink": "images/le-pere-goriot.jpg",
       "language": "French",
       "link": "https://en.wikipedia.org/wiki/Le_P%C3%A8re_Goriot\n",
-      "pages": 443,
+      "price": 443,
       "title": "Le P\u00e8re Goriot",
       "year": 1835
     },
@@ -95,7 +95,7 @@
       "imageLink": "images/molloy-malone-dies-the-unnamable.jpg",
       "language": "French, English",
       "link": "https://en.wikipedia.org/wiki/Molloy_(novel)\n",
-      "pages": 256,
+      "price": 256,
       "title": "Molloy, Malone Dies, The Unnamable, the trilogy",
       "year": 1952
     },
@@ -105,7 +105,7 @@
       "imageLink": "images/the-decameron.jpg",
       "language": "Italian",
       "link": "https://en.wikipedia.org/wiki/The_Decameron\n",
-      "pages": 1024,
+      "price": 1024,
       "title": "The Decameron",
       "year": 1351
     },
@@ -115,7 +115,7 @@
       "imageLink": "images/ficciones.jpg",
       "language": "Spanish",
       "link": "https://en.wikipedia.org/wiki/Ficciones\n",
-      "pages": 224,
+      "price": 224,
       "title": "Ficciones",
       "year": 1965
     },
@@ -125,7 +125,7 @@
       "imageLink": "images/wuthering-heights.jpg",
       "language": "English",
       "link": "https://en.wikipedia.org/wiki/Wuthering_Heights\n",
-      "pages": 342,
+      "price": 342,
       "title": "Wuthering Heights",
       "year": 1847
     },
@@ -135,7 +135,7 @@
       "imageLink": "images/l-etranger.jpg",
       "language": "French",
       "link": "https://en.wikipedia.org/wiki/The_Stranger_(novel)\n",
-      "pages": 185,
+      "price": 185,
       "title": "The Stranger",
       "year": 1942
     },
@@ -145,7 +145,7 @@
       "imageLink": "images/poems-paul-celan.jpg",
       "language": "German",
       "link": "\n",
-      "pages": 320,
+      "price": 320,
       "title": "Poems",
       "year": 1952
     },
@@ -155,7 +155,7 @@
       "imageLink": "images/voyage-au-bout-de-la-nuit.jpg",
       "language": "French",
       "link": "https://en.wikipedia.org/wiki/Journey_to_the_End_of_the_Night\n",
-      "pages": 505,
+      "price": 505,
       "title": "Journey to the End of the Night",
       "year": 1932
     },
@@ -165,7 +165,7 @@
       "imageLink": "images/don-quijote-de-la-mancha.jpg",
       "language": "Spanish",
       "link": "https://en.wikipedia.org/wiki/Don_Quixote\n",
-      "pages": 1056,
+      "price": 1056,
       "title": "Don Quijote De La Mancha",
       "year": 1610
     },
@@ -175,7 +175,7 @@
       "imageLink": "images/the-canterbury-tales.jpg",
       "language": "English",
       "link": "https://en.wikipedia.org/wiki/The_Canterbury_Tales\n",
-      "pages": 544,
+      "price": 544,
       "title": "The Canterbury Tales",
       "year": 1450
     },
@@ -185,7 +185,7 @@
       "imageLink": "images/stories-of-anton-chekhov.jpg",
       "language": "Russian",
       "link": "https://en.wikipedia.org/wiki/List_of_short_stories_by_Anton_Chekhov\n",
-      "pages": 194,
+      "price": 194,
       "title": "Stories",
       "year": 1886
     },
@@ -195,7 +195,7 @@
       "imageLink": "images/nostromo.jpg",
       "language": "English",
       "link": "https://en.wikipedia.org/wiki/Nostromo\n",
-      "pages": 320,
+      "price": 320,
       "title": "Nostromo",
       "year": 1904
     },
@@ -205,7 +205,7 @@
       "imageLink": "images/great-expectations.jpg",
       "language": "English",
       "link": "https://en.wikipedia.org/wiki/Great_Expectations\n",
-      "pages": 194,
+      "price": 194,
       "title": "Great Expectations",
       "year": 1861
     },
@@ -215,7 +215,7 @@
       "imageLink": "images/jacques-the-fatalist.jpg",
       "language": "French",
       "link": "https://en.wikipedia.org/wiki/Jacques_the_Fatalist\n",
-      "pages": 596,
+      "price": 596,
       "title": "Jacques the Fatalist",
       "year": 1796
     },
@@ -225,7 +225,7 @@
       "imageLink": "images/berlin-alexanderplatz.jpg",
       "language": "German",
       "link": "https://en.wikipedia.org/wiki/Berlin_Alexanderplatz\n",
-      "pages": 600,
+      "price": 600,
       "title": "Berlin Alexanderplatz",
       "year": 1929
     },
@@ -235,7 +235,7 @@
       "imageLink": "images/crime-and-punishment.jpg",
       "language": "Russian",
       "link": "https://en.wikipedia.org/wiki/Crime_and_Punishment\n",
-      "pages": 551,
+      "price": 551,
       "title": "Crime and Punishment",
       "year": 1866
     },
@@ -245,7 +245,7 @@
       "imageLink": "images/the-idiot.jpg",
       "language": "Russian",
       "link": "https://en.wikipedia.org/wiki/The_Idiot\n",
-      "pages": 656,
+      "price": 656,
       "title": "The Idiot",
       "year": 1869
     },
@@ -255,7 +255,7 @@
       "imageLink": "images/the-possessed.jpg",
       "language": "Russian",
       "link": "https://en.wikipedia.org/wiki/Demons_(Dostoyevsky_novel)\n",
-      "pages": 768,
+      "price": 768,
       "title": "The Possessed",
       "year": 1872
     },
@@ -265,7 +265,7 @@
       "imageLink": "images/the-brothers-karamazov.jpg",
       "language": "Russian",
       "link": "https://en.wikipedia.org/wiki/The_Brothers_Karamazov\n",
-      "pages": 824,
+      "price": 824,
       "title": "The Brothers Karamazov",
       "year": 1880
     },
@@ -275,7 +275,7 @@
       "imageLink": "images/middlemarch.jpg",
       "language": "English",
       "link": "https://en.wikipedia.org/wiki/Middlemarch\n",
-      "pages": 800,
+      "price": 800,
       "title": "Middlemarch",
       "year": 1871
     },
@@ -285,7 +285,7 @@
       "imageLink": "images/invisible-man.jpg",
       "language": "English",
       "link": "https://en.wikipedia.org/wiki/Invisible_Man\n",
-      "pages": 581,
+      "price": 581,
       "title": "Invisible Man",
       "year": 1952
     },
@@ -295,7 +295,7 @@
       "imageLink": "images/medea.jpg",
       "language": "Greek",
       "link": "https://en.wikipedia.org/wiki/Medea_(play)\n",
-      "pages": 104,
+      "price": 104,
       "title": "Medea",
       "year": -431
     },
@@ -305,7 +305,7 @@
       "imageLink": "images/absalom-absalom.jpg",
       "language": "English",
       "link": "https://en.wikipedia.org/wiki/Absalom,_Absalom!\n",
-      "pages": 313,
+      "price": 313,
       "title": "Absalom, Absalom!",
       "year": 1936
     },
@@ -315,7 +315,7 @@
       "imageLink": "images/the-sound-and-the-fury.jpg",
       "language": "English",
       "link": "https://en.wikipedia.org/wiki/The_Sound_and_the_Fury\n",
-      "pages": 326,
+      "price": 326,
       "title": "The Sound and the Fury",
       "year": 1929
     },
@@ -325,7 +325,7 @@
       "imageLink": "images/madame-bovary.jpg",
       "language": "French",
       "link": "https://en.wikipedia.org/wiki/Madame_Bovary\n",
-      "pages": 528,
+      "price": 528,
       "title": "Madame Bovary",
       "year": 1857
     },
@@ -335,7 +335,7 @@
       "imageLink": "images/l-education-sentimentale.jpg",
       "language": "French",
       "link": "https://en.wikipedia.org/wiki/Sentimental_Education\n",
-      "pages": 606,
+      "price": 606,
       "title": "Sentimental Education",
       "year": 1869
     },
@@ -345,7 +345,7 @@
       "imageLink": "images/gypsy-ballads.jpg",
       "language": "Spanish",
       "link": "https://en.wikipedia.org/wiki/Gypsy_Ballads\n",
-      "pages": 218,
+      "price": 218,
       "title": "Gypsy Ballads",
       "year": 1928
     },
@@ -355,7 +355,7 @@
       "imageLink": "images/one-hundred-years-of-solitude.jpg",
       "language": "Spanish",
       "link": "https://en.wikipedia.org/wiki/One_Hundred_Years_of_Solitude\n",
-      "pages": 417,
+      "price": 417,
       "title": "One Hundred Years of Solitude",
       "year": 1967
     },
@@ -365,7 +365,7 @@
       "imageLink": "images/love-in-the-time-of-cholera.jpg",
       "language": "Spanish",
       "link": "https://en.wikipedia.org/wiki/Love_in_the_Time_of_Cholera\n",
-      "pages": 368,
+      "price": 368,
       "title": "Love in the Time of Cholera",
       "year": 1985
     },
@@ -375,7 +375,7 @@
       "imageLink": "images/faust.jpg",
       "language": "German",
       "link": "https://en.wikipedia.org/wiki/Goethe%27s_Faust\n",
-      "pages": 158,
+      "price": 158,
       "title": "Faust",
       "year": 1832
     },
@@ -385,7 +385,7 @@
       "imageLink": "images/dead-souls.jpg",
       "language": "Russian",
       "link": "https://en.wikipedia.org/wiki/Dead_Souls\n",
-      "pages": 432,
+      "price": 432,
       "title": "Dead Souls",
       "year": 1842
     },
@@ -395,7 +395,7 @@
       "imageLink": "images/the-tin-drum.jpg",
       "language": "German",
       "link": "https://en.wikipedia.org/wiki/The_Tin_Drum\n",
-      "pages": 600,
+      "price": 600,
       "title": "The Tin Drum",
       "year": 1959
     },
@@ -405,7 +405,7 @@
       "imageLink": "images/the-devil-to-pay-in-the-backlands.jpg",
       "language": "Portuguese",
       "link": "https://en.wikipedia.org/wiki/The_Devil_to_Pay_in_the_Backlands\n",
-      "pages": 494,
+      "price": 494,
       "title": "The Devil to Pay in the Backlands",
       "year": 1956
     },
@@ -415,7 +415,7 @@
       "imageLink": "images/hunger.jpg",
       "language": "Norwegian",
       "link": "https://en.wikipedia.org/wiki/Hunger_(Hamsun_novel)\n",
-      "pages": 176,
+      "price": 176,
       "title": "Hunger",
       "year": 1890
     },
@@ -425,7 +425,7 @@
       "imageLink": "images/the-old-man-and-the-sea.jpg",
       "language": "English",
       "link": "https://en.wikipedia.org/wiki/The_Old_Man_and_the_Sea\n",
-      "pages": 128,
+      "price": 128,
       "title": "The Old Man and the Sea",
       "year": 1952
     },
@@ -435,7 +435,7 @@
       "imageLink": "images/the-iliad-of-homer.jpg",
       "language": "Greek",
       "link": "https://en.wikipedia.org/wiki/Iliad\n",
-      "pages": 608,
+      "price": 608,
       "title": "Iliad",
       "year": -735
     },
@@ -445,7 +445,7 @@
       "imageLink": "images/the-odyssey-of-homer.jpg",
       "language": "Greek",
       "link": "https://en.wikipedia.org/wiki/Odyssey\n",
-      "pages": 374,
+      "price": 374,
       "title": "Odyssey",
       "year": -800
     },
@@ -455,7 +455,7 @@
       "imageLink": "images/a-Dolls-house.jpg",
       "language": "Norwegian",
       "link": "https://en.wikipedia.org/wiki/A_Doll%27s_House\n",
-      "pages": 68,
+      "price": 68,
       "title": "A Doll's House",
       "year": 1879
     },
@@ -465,7 +465,7 @@
       "imageLink": "images/ulysses.jpg",
       "language": "English",
       "link": "https://en.wikipedia.org/wiki/Ulysses_(novel)\n",
-      "pages": 228,
+      "price": 228,
       "title": "Ulysses",
       "year": 1922
     },
@@ -475,7 +475,7 @@
       "imageLink": "images/stories-of-franz-kafka.jpg",
       "language": "German",
       "link": "https://en.wikipedia.org/wiki/Franz_Kafka_bibliography#Short_stories\n",
-      "pages": 488,
+      "price": 488,
       "title": "Stories",
       "year": 1924
     },
@@ -485,7 +485,7 @@
       "imageLink": "images/the-trial.jpg",
       "language": "German",
       "link": "https://en.wikipedia.org/wiki/The_Trial\n",
-      "pages": 160,
+      "price": 160,
       "title": "The Trial",
       "year": 1925
     },
@@ -495,7 +495,7 @@
       "imageLink": "images/the-castle.jpg",
       "language": "German",
       "link": "https://en.wikipedia.org/wiki/The_Castle_(novel)\n",
-      "pages": 352,
+      "price": 352,
       "title": "The Castle",
       "year": 1926
     },
@@ -505,7 +505,7 @@
       "imageLink": "images/the-recognition-of-shakuntala.jpg",
       "language": "Sanskrit",
       "link": "https://en.wikipedia.org/wiki/Abhij%C3%B1%C4%81na%C5%9B%C4%81kuntalam\n",
-      "pages": 147,
+      "price": 147,
       "title": "The recognition of Shakuntala",
       "year": 150
     },
@@ -515,7 +515,7 @@
       "imageLink": "images/the-sound-of-the-mountain.jpg",
       "language": "Japanese",
       "link": "https://en.wikipedia.org/wiki/The_Sound_of_the_Mountain\n",
-      "pages": 288,
+      "price": 288,
       "title": "The Sound of the Mountain",
       "year": 1954
     },
@@ -525,7 +525,7 @@
       "imageLink": "images/zorba-the-greek.jpg",
       "language": "Greek",
       "link": "https://en.wikipedia.org/wiki/Zorba_the_Greek\n",
-      "pages": 368,
+      "price": 368,
       "title": "Zorba the Greek",
       "year": 1946
     },
@@ -535,7 +535,7 @@
       "imageLink": "images/sons-and-lovers.jpg",
       "language": "English",
       "link": "https://en.wikipedia.org/wiki/Sons_and_Lovers\n",
-      "pages": 432,
+      "price": 432,
       "title": "Sons and Lovers",
       "year": 1913
     },
@@ -545,7 +545,7 @@
       "imageLink": "images/independent-people.jpg",
       "language": "Icelandic",
       "link": "https://en.wikipedia.org/wiki/Independent_People\n",
-      "pages": 470,
+      "price": 470,
       "title": "Independent People",
       "year": 1934
     },
@@ -555,7 +555,7 @@
       "imageLink": "images/poems-giacomo-leopardi.jpg",
       "language": "Italian",
       "link": "\n",
-      "pages": 184,
+      "price": 184,
       "title": "Poems",
       "year": 1818
     },
@@ -565,7 +565,7 @@
       "imageLink": "images/the-golden-notebook.jpg",
       "language": "English",
       "link": "https://en.wikipedia.org/wiki/The_Golden_Notebook\n",
-      "pages": 688,
+      "price": 688,
       "title": "The Golden Notebook",
       "year": 1962
     },
@@ -575,7 +575,7 @@
       "imageLink": "images/pippi-longstocking.jpg",
       "language": "Swedish",
       "link": "https://en.wikipedia.org/wiki/Pippi_Longstocking\n",
-      "pages": 160,
+      "price": 160,
       "title": "Pippi Longstocking",
       "year": 1945
     },
@@ -585,7 +585,7 @@
       "imageLink": "images/diary-of-a-madman.jpg",
       "language": "Chinese",
       "link": "https://en.wikipedia.org/wiki/A_Madman%27s_Diary\n",
-      "pages": 389,
+      "price": 389,
       "title": "Diary of a Madman",
       "year": 1918
     },
@@ -595,7 +595,7 @@
       "imageLink": "images/children-of-gebelawi.jpg",
       "language": "Arabic",
       "link": "https://en.wikipedia.org/wiki/Children_of_Gebelawi\n",
-      "pages": 355,
+      "price": 355,
       "title": "Children of Gebelawi",
       "year": 1959
     },
@@ -605,7 +605,7 @@
       "imageLink": "images/buddenbrooks.jpg",
       "language": "German",
       "link": "https://en.wikipedia.org/wiki/Buddenbrooks\n",
-      "pages": 736,
+      "price": 736,
       "title": "Buddenbrooks",
       "year": 1901
     },
@@ -615,7 +615,7 @@
       "imageLink": "images/the-magic-mountain.jpg",
       "language": "German",
       "link": "https://en.wikipedia.org/wiki/The_Magic_Mountain\n",
-      "pages": 720,
+      "price": 720,
       "title": "The Magic Mountain",
       "year": 1924
     },
@@ -625,7 +625,7 @@
       "imageLink": "images/moby-dick.jpg",
       "language": "English",
       "link": "https://en.wikipedia.org/wiki/Moby-Dick\n",
-      "pages": 378,
+      "price": 378,
       "title": "Moby Dick",
       "year": 1851
     },
@@ -635,7 +635,7 @@
       "imageLink": "images/essais.jpg",
       "language": "French",
       "link": "https://en.wikipedia.org/wiki/Essays_(Montaigne)\n",
-      "pages": 404,
+      "price": 404,
       "title": "Essays",
       "year": 1595
     },
@@ -645,7 +645,7 @@
       "imageLink": "images/history.jpg",
       "language": "Italian",
       "link": "https://en.wikipedia.org/wiki/History_(novel)\n",
-      "pages": 600,
+      "price": 600,
       "title": "History",
       "year": 1974
     },
@@ -655,7 +655,7 @@
       "imageLink": "images/beloved.jpg",
       "language": "English",
       "link": "https://en.wikipedia.org/wiki/Beloved_(novel)\n",
-      "pages": 321,
+      "price": 321,
       "title": "Beloved",
       "year": 1987
     },
@@ -665,7 +665,7 @@
       "imageLink": "images/the-tale-of-genji.jpg",
       "language": "Japanese",
       "link": "https://en.wikipedia.org/wiki/The_Tale_of_Genji\n",
-      "pages": 1360,
+      "price": 1360,
       "title": "The Tale of Genji",
       "year": 1006
     },
@@ -675,7 +675,7 @@
       "imageLink": "images/the-man-without-qualities.jpg",
       "language": "German",
       "link": "https://en.wikipedia.org/wiki/The_Man_Without_Qualities\n",
-      "pages": 365,
+      "price": 365,
       "title": "The Man Without Qualities",
       "year": 1931
     },
@@ -685,7 +685,7 @@
       "imageLink": "images/lolita.jpg",
       "language": "English",
       "link": "https://en.wikipedia.org/wiki/Lolita\n",
-      "pages": 317,
+      "price": 317,
       "title": "Lolita",
       "year": 1955
     },
@@ -695,7 +695,7 @@
       "imageLink": "images/nineteen-eighty-four.jpg",
       "language": "English",
       "link": "https://en.wikipedia.org/wiki/Nineteen_Eighty-Four\n",
-      "pages": 272,
+      "price": 272,
       "title": "Nineteen Eighty-Four",
       "year": 1949
     },
@@ -705,7 +705,7 @@
       "imageLink": "images/the-metamorphoses-of-ovid.jpg",
       "language": "Classical Latin",
       "link": "https://en.wikipedia.org/wiki/Metamorphoses\n",
-      "pages": 576,
+      "price": 576,
       "title": "Metamorphoses",
       "year": 100
     },
@@ -715,7 +715,7 @@
       "imageLink": "images/the-book-of-disquiet.jpg",
       "language": "Portuguese",
       "link": "https://en.wikipedia.org/wiki/The_Book_of_Disquiet\n",
-      "pages": 272,
+      "price": 272,
       "title": "The Book of Disquiet",
       "year": 1928
     },
@@ -725,7 +725,7 @@
       "imageLink": "images/tales-and-poems-of-edgar-allan-poe.jpg",
       "language": "English",
       "link": "https://en.wikipedia.org/wiki/Edgar_Allan_Poe_bibliography#Tales\n",
-      "pages": 842,
+      "price": 842,
       "title": "Tales",
       "year": 1950
     },
@@ -735,7 +735,7 @@
       "imageLink": "images/a-la-recherche-du-temps-perdu.jpg",
       "language": "French",
       "link": "https://en.wikipedia.org/wiki/In_Search_of_Lost_Time\n",
-      "pages": 2408,
+      "price": 2408,
       "title": "In Search of Lost Time",
       "year": 1920
     },
@@ -745,7 +745,7 @@
       "imageLink": "images/gargantua-and-pantagruel.jpg",
       "language": "French",
       "link": "https://en.wikipedia.org/wiki/Gargantua_and_Pantagruel\n",
-      "pages": 623,
+      "price": 623,
       "title": "Gargantua and Pantagruel",
       "year": 1533
     },
@@ -755,7 +755,7 @@
       "imageLink": "images/pedro-paramo.jpg",
       "language": "Spanish",
       "link": "https://en.wikipedia.org/wiki/Pedro_P%C3%A1ramo\n",
-      "pages": 124,
+      "price": 124,
       "title": "Pedro P\u00e1ramo",
       "year": 1955
     },
@@ -765,7 +765,7 @@
       "imageLink": "images/the-masnavi.jpg",
       "language": "Persian",
       "link": "https://en.wikipedia.org/wiki/Masnavi\n",
-      "pages": 438,
+      "price": 438,
       "title": "The Masnavi",
       "year": 1236
     },
@@ -775,7 +775,7 @@
       "imageLink": "images/midnights-children.jpg",
       "language": "English",
       "link": "https://en.wikipedia.org/wiki/Midnight%27s_Children\n",
-      "pages": 536,
+      "price": 536,
       "title": "Midnight's Children",
       "year": 1981
     },
@@ -785,7 +785,7 @@
       "imageLink": "images/bostan.jpg",
       "language": "Persian",
       "link": "https://en.wikipedia.org/wiki/Bustan_(book)\n",
-      "pages": 298,
+      "price": 298,
       "title": "Bostan",
       "year": 1257
     },
@@ -795,7 +795,7 @@
       "imageLink": "images/season-of-migration-to-the-north.jpg",
       "language": "Arabic",
       "link": "https://en.wikipedia.org/wiki/Season_of_Migration_to_the_North\n",
-      "pages": 139,
+      "price": 139,
       "title": "Season of Migration to the North",
       "year": 1966
     },
@@ -805,7 +805,7 @@
       "imageLink": "images/blindness.jpg",
       "language": "Portuguese",
       "link": "https://en.wikipedia.org/wiki/Blindness_(novel)\n",
-      "pages": 352,
+      "price": 352,
       "title": "Blindness",
       "year": 1995
     },
@@ -815,7 +815,7 @@
       "imageLink": "images/hamlet.jpg",
       "language": "English",
       "link": "https://en.wikipedia.org/wiki/Hamlet\n",
-      "pages": 432,
+      "price": 432,
       "title": "Hamlet",
       "year": 1603
     },
@@ -825,7 +825,7 @@
       "imageLink": "images/king-lear.jpg",
       "language": "English",
       "link": "https://en.wikipedia.org/wiki/King_Lear\n",
-      "pages": 384,
+      "price": 384,
       "title": "King Lear",
       "year": 1608
     },
@@ -835,7 +835,7 @@
       "imageLink": "images/othello.jpg",
       "language": "English",
       "link": "https://en.wikipedia.org/wiki/Othello\n",
-      "pages": 314,
+      "price": 314,
       "title": "Othello",
       "year": 1609
     },
@@ -845,7 +845,7 @@
       "imageLink": "images/oedipus-the-king.jpg",
       "language": "Greek",
       "link": "https://en.wikipedia.org/wiki/Oedipus_the_King\n",
-      "pages": 88,
+      "price": 88,
       "title": "Oedipus the King",
       "year": -430
     },
@@ -855,7 +855,7 @@
       "imageLink": "images/le-rouge-et-le-noir.jpg",
       "language": "French",
       "link": "https://en.wikipedia.org/wiki/The_Red_and_the_Black\n",
-      "pages": 576,
+      "price": 576,
       "title": "The Red and the Black",
       "year": 1830
     },
@@ -865,7 +865,7 @@
       "imageLink": "images/the-life-and-opinions-of-tristram-shandy.jpg",
       "language": "English",
       "link": "https://en.wikipedia.org/wiki/The_Life_and_Opinions_of_Tristram_Shandy,_Gentleman\n",
-      "pages": 640,
+      "price": 640,
       "title": "The Life And Opinions of Tristram Shandy",
       "year": 1760
     },
@@ -875,7 +875,7 @@
       "imageLink": "images/confessions-of-zeno.jpg",
       "language": "Italian",
       "link": "https://en.wikipedia.org/wiki/Zeno%27s_Conscience\n",
-      "pages": 412,
+      "price": 412,
       "title": "Confessions of Zeno",
       "year": 1923
     },
@@ -885,7 +885,7 @@
       "imageLink": "images/gullivers-travels.jpg",
       "language": "English",
       "link": "https://en.wikipedia.org/wiki/Gulliver%27s_Travels\n",
-      "pages": 178,
+      "price": 178,
       "title": "Gulliver's Travels",
       "year": 1726
     },
@@ -895,7 +895,7 @@
       "imageLink": "images/war-and-peace.jpg",
       "language": "Russian",
       "link": "https://en.wikipedia.org/wiki/War_and_Peace\n",
-      "pages": 1296,
+      "price": 1296,
       "title": "War and Peace",
       "year": 1867
     },
@@ -905,7 +905,7 @@
       "imageLink": "images/anna-karenina.jpg",
       "language": "Russian",
       "link": "https://en.wikipedia.org/wiki/Anna_Karenina\n",
-      "pages": 864,
+      "price": 864,
       "title": "Anna Karenina",
       "year": 1877
     },
@@ -915,7 +915,7 @@
       "imageLink": "images/the-death-of-ivan-ilyich.jpg",
       "language": "Russian",
       "link": "https://en.wikipedia.org/wiki/The_Death_of_Ivan_Ilyich\n",
-      "pages": 92,
+      "price": 92,
       "title": "The Death of Ivan Ilyich",
       "year": 1886
     },
@@ -925,7 +925,7 @@
       "imageLink": "images/the-adventures-of-huckleberry-finn.jpg",
       "language": "English",
       "link": "https://en.wikipedia.org/wiki/Adventures_of_Huckleberry_Finn\n",
-      "pages": 224,
+      "price": 224,
       "title": "The Adventures of Huckleberry Finn",
       "year": 1884
     },
@@ -935,7 +935,7 @@
       "imageLink": "images/ramayana.jpg",
       "language": "Sanskrit",
       "link": "https://en.wikipedia.org/wiki/Ramayana\n",
-      "pages": 152,
+      "price": 152,
       "title": "Ramayana",
       "year": -450
     },
@@ -945,7 +945,7 @@
       "imageLink": "images/the-aeneid.jpg",
       "language": "Classical Latin",
       "link": "https://en.wikipedia.org/wiki/Aeneid\n",
-      "pages": 442,
+      "price": 442,
       "title": "The Aeneid",
       "year": -23
     },
@@ -955,7 +955,7 @@
       "imageLink": "images/the-mahab-harata.jpg",
       "language": "Sanskrit",
       "link": "https://en.wikipedia.org/wiki/Mahabharata\n",
-      "pages": 276,
+      "price": 276,
       "title": "Mahabharata",
       "year": -700
     },
@@ -965,7 +965,7 @@
       "imageLink": "images/leaves-of-grass.jpg",
       "language": "English",
       "link": "https://en.wikipedia.org/wiki/Leaves_of_Grass\n",
-      "pages": 152,
+      "price": 152,
       "title": "Leaves of Grass",
       "year": 1855
     },
@@ -975,7 +975,7 @@
       "imageLink": "images/mrs-dalloway.jpg",
       "language": "English",
       "link": "https://en.wikipedia.org/wiki/Mrs_Dalloway\n",
-      "pages": 216,
+      "price": 216,
       "title": "Mrs Dalloway",
       "year": 1925
     },
@@ -985,7 +985,7 @@
       "imageLink": "images/to-the-lighthouse.jpg",
       "language": "English",
       "link": "https://en.wikipedia.org/wiki/To_the_Lighthouse\n",
-      "pages": 209,
+      "price": 209,
       "title": "To the Lighthouse",
       "year": 1927
     },
@@ -995,7 +995,7 @@
       "imageLink": "images/memoirs-of-hadrian.jpg",
       "language": "French",
       "link": "https://en.wikipedia.org/wiki/Memoirs_of_Hadrian\n",
-      "pages": 408,
+      "price": 408,
       "title": "Memoirs of Hadrian",
       "year": 1951
     }
