@@ -24,13 +24,23 @@ const BranchSchema = new mongoose.Schema({
             minlength: 2,
             maxlength: 100
         },
+        longitude: {
+            type: Number,
+            required: true,
+        },
+        latitude: {
+            type: Number,
+            required: true,
+             },
         country: {
             type: String,
             required: true,
             trim: true,
             minlength: 2,
             maxlength: 100
-        }
+        },
+        
+      
     }
 });
 
