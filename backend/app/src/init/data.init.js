@@ -25,6 +25,7 @@ const sendRequest = (method, url, data = null) => {
 };
 
 const addData = async () => {
+    
     await sendRequest('POST', 'auth/register',
         {
             "name": "admin",

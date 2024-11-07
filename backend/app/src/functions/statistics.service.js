@@ -1,7 +1,10 @@
+const Order = require('../models/OrderSchema'); // Adjust the path if needed
+
+
 const getLastTenDaysSales = async () => {
     try {
         const tenDaysAgo = new Date();
-        tenDaysAgo.setDate(tenDaysAgo.getDate() - 10);  // Get the date 10 days ago
+        tenDaysAgo.setDate(tenDaysAgo.getDate() - 1000);  // Get the date 10 days ago
 
         // Aggregate orders from the last 10 days
         const sales = await Order.aggregate([
@@ -103,7 +106,7 @@ const getOrdersByAuthor = async (author) => {
 };
 
 
-export const getMonthlyOrders = async () => {
+ const getMonthlyOrders = async () => {
     try {
         const sales = await Order.aggregate([
             {
@@ -180,6 +183,6 @@ module.exports = {
     getOrdersByAuthor,
     getSalesPerBook,
     getLastTenDaysSales,
-    getMonthlyOrders
+    getMonthlyOrders,
     
 }
