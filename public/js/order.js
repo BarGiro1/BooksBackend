@@ -38,6 +38,7 @@ document.addEventListener('DOMContentLoaded', function () {
             });
 
             if (response.ok) {
+                createOrder = await response.json()
                 alert('Order successfully placed!');
                 localStorage.removeItem('cart');
                 window.location.href = '/home'; 

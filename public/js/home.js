@@ -127,6 +127,7 @@ $(document).ready(function () {
         const author = $(this).data('author');
         const price = $(this).data('price');
         const id = $(this).data('id');
+        console.log(id)
 
         let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
@@ -136,6 +137,6 @@ $(document).ready(function () {
 
         localStorage.setItem('cart', JSON.stringify(cart));
 
-        alert(`${title} added to cart!`);
+        // alert(`${title} added to cart!`);
     });
 });
