@@ -6,20 +6,26 @@
         <li><a href="/cart" class="nav-link px-2 link-dark">Cart</a></li>
     </ul>
 
-
-    <div class="dropdown me-2">
-        <button class="btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-          Admin Pages
-        </button>
-        <ul class="dropdown-menu">
-          <li><a class="dropdown-item" href="/admin/orders">Manage Orders</a></li>
-          <li><a class="dropdown-item" href="/admin/users">Manage Users</a></li>
-          <li><a class="dropdown-item" href="/admin/books">Manage Books</a></li>
-          <li><a class="dropdown-item" href="/admin/statistics">View Statistics</a></li>
-        </ul>
+    <div class="d-flex">
+      <div class="navbar-admin dropdown me-2 d-none">
+          <button class="btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Admin Pages
+          </button>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="/admin/orders">Manage Orders</a></li>
+            <li><a class="dropdown-item" href="/admin/users">Manage Users</a></li>
+            <li><a class="dropdown-item" href="/admin/books">Manage Books</a></li>
+            <li><a class="dropdown-item" href="/admin/statistics">View Statistics</a></li>
+          </ul>
       </div>
-    <div class="navbar-login text-end d-none">
-        <a class="btn btn-outline-primary me-2" href="/login" role="button">Login</a>
-        <a class="btn btn-primary me-2" href="/signup" role="button">Sign Up</a>
+    
+
+      <div class="navbar-login text-end d-none">
+          <a class="btn btn-outline-primary me-2" href="/login" role="button">Login</a>
+          <a class="btn btn-primary me-2" href="/signup" role="button">Sign Up</a>
+      </div>
+      <div class="navbar-logout text-end d-none">
+        <a class="btn btn-outline-primary me-2" id="logout" role="button">Log out</a>
+      </div>
     </div>
 </header>
