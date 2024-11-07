@@ -73,7 +73,7 @@ $(document).ready(function () {
 
     function renderBooks() {
         let html = '';
-        const booksContainer = $('.books-continer');
+        const booksContainer = $('.books-container');
 
         const filteredBooks = books.filter(book => {
             const matchesAuthor = filters.authors.size === 0 || filters.authors.has(book.author);
@@ -109,14 +109,12 @@ $(document).ready(function () {
 
         $(".book-card").each(function () {
             let title = $(this).find(".card-title").text().toLowerCase();
-            let author = $(this).find(".card-text").first().text().toLowerCase();
-            let price = $(this).find(".card-text").first().text().toLowerCase();
-
+            let author = $(this).find(".book-author").text().toLowerCase();
 
             if (title.includes(searchTerm) || author.includes(searchTerm)) {
-                $(this).show();  
+                $(this).closest('a').show();  
             } else {
-                $(this).hide(); 
+                $(this).closest('a').hide(); 
             }
         });
     });

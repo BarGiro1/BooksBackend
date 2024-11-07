@@ -13,10 +13,18 @@ $(document).ready(function () {
 
     if (!validJWT) {
         $(".navbar-login").removeClass("d-none");
+    } else {
+        $(".navbar-loggedin").removeClass("d-none")
+        $(".navbar-logout").removeClass("d-none")
     }
 
     if (isAdmin) {
         $(".navbar-admin").removeClass("d-none");
     }
 
+    $('#logout').on('click', function () {
+        localStorage.removeItem("token");
+        location.reload()
+
+    });
 });
