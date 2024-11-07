@@ -27,6 +27,25 @@ function jwtDecodeAndValidate(t) {
         return { valid: false, error: 'Invalid token format' };
     }
 }
+function decodeToken(token) {
+    
+    if (!token) {
+        alert("No token found! Please log in again.");
+        return; // Exit if there's no token
+    }
+    payload = token.split('.')[1];
+    decodedPayload = JSON.parse(atob(payload));
+    return decodedPayload
+
+}
+function isCartEmpty(cart) {
+
+    if (cart.length === 0) {
+        alert("Your cart is empty.Please return to home page and add items to proceed to the order page.");
+        window.location.href = '/home'; // Redirect to a shopping page
+        return;
+    }
+}
 
 function showModal(title, message) {
     // Create modal HTML

@@ -8,7 +8,7 @@ $(document).ready(function () {
         if (cart.length === 0) {
             html = `
                 <div class="alert alert-warning text-center" role="alert">
-                    Your cart is empty. Please select products and add them to the Cart
+                    Cart is empty! Please add products to your Cart
                 </div>
             `;
         } else {
