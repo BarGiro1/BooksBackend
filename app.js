@@ -47,5 +47,8 @@ app.get('/order', (req, res) => {
     res.render('order');
 });
 
+app.get('/map', (req, res) => {
+    res.render('map');
+});
 app.listen(3000);
 

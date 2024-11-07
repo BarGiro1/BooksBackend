@@ -5,8 +5,7 @@
     <main class="container vh-75 mt-5">
         <div class="checkout-container">
             <h2 class="checkout-title">Checkout</h2>
-            <form id="order-form" action="/order/confirm" method="POST" novalidate>
-
+            <form id="order-form" method="POST" novalidate>
                 <div class="form-group">
                     <label for="email">Email</label>
                     <input type="email" class="form-control" id="email" name="email" placeholder="Enter email address" required>
@@ -30,7 +29,6 @@
                     <select class="form-control" id="payment-method" name="paymentMethod" required>
                         <option value="" disabled selected>Select Payment Method</option>
                         <option value="credit-card">Credit Card</option>
-                        <option value="paypal">PayPal</option>
                     </select>
                     <div class="invalid-feedback">Please select a payment method.</div>
                 </div>

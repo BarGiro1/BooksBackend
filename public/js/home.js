@@ -94,7 +94,7 @@ $(document).ready(function () {
                             <p class="card-text">Year: ${book.publicationYear}</p>
                             <p class="card-text">Pages: ${book.numOfPages}</p>
                             <p class="card-text">Price: ${book.price}</p>
-                            <button class="add-to-cart-btn" data-price=${book.price} data-title="${book.name}" data-author="${book.author}">Add to Cart</button>
+                            <button class="add-to-cart-btn" data-price=${book.price} data-title="${book.name}" data-author="${book.author}" data-id="${book._id}">Add to Cart</button>
 
                         </div>
                     </div>
@@ -126,13 +126,13 @@ $(document).ready(function () {
         const title = $(this).data('title');
         const author = $(this).data('author');
         const price = $(this).data('price');
-
+        const id = $(this).data('id');
 
         let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
         console.log('Cart before adding:', cart);
 
-        cart.push({ title, author, price });
+        cart.push({ title, author, price ,id});
 
         localStorage.setItem('cart', JSON.stringify(cart));
 
