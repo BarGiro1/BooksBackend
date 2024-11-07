@@ -183,6 +183,6 @@ module.exports = {
     getOrdersByAuthor,
     getSalesPerBook,
     getLastTenDaysSales,
-    getMonthlyOrders,
+    getMonthlyOrders
     
 }
