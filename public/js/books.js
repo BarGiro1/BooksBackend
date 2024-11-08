@@ -17,7 +17,7 @@ function addTableHeaders() {
             <th>Actions</th>
         </tr>
     `;
-    $('.users-table thead').html(headers);
+    $('.books-table thead').html(headers);
 }
 
 function fetchBooks() {
