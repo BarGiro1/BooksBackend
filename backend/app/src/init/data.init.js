@@ -25,7 +25,7 @@ const sendRequest = (method, url, data = null) => {
 };
 
 const addData = async () => {
-    
+try {
     await sendRequest('POST', 'auth/register',
         {
             "name": "admin",
@@ -187,8 +187,13 @@ const addData = async () => {
                 }
             }
         );
-    };
-   
+    };}
+     catch (error) {
+        console.error("An error occurred:", error);
+    
 }
+    
+   
+};
 
 module.exports = {addData};

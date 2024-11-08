@@ -15,7 +15,7 @@ const { addData } = require('./init/data.init')
 
 
 const PORT = process.env.PORT || 5001;
-const SOCKET_PORT = process.env.SOCKET_PORT || 3021;
+const SOCKET_PORT = process.env.SOCKET_PORT || 3001;
 
 
 
@@ -61,6 +61,6 @@ app.listen(PORT, () => {
     connectDB();
 });
 
-// console.log('Adding Initial Data to the DB')
-// addData();
+console.log('Adding Initial Data to the DB')
+addData();
 console.log('Done')

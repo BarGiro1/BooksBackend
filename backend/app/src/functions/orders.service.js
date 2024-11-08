@@ -1,4 +1,6 @@
 const Order = require('../models/OrderSchema');
+const Book = require('../models/BookSchema');
+
 const { Types: { ObjectId } } = require('mongoose');
 const usersService = require('./users.service');
 const booksService = require('./books.service');
