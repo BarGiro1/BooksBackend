@@ -47,8 +47,8 @@ app.get('/order', (req, res) => {
     res.render('order');
 });
 
-app.get('/map', (req, res) => {
-    res.render('map');
-});
+const mapRoutes = require('./routes/map');
+app.use(mapRoutes);
+
 app.listen(3000);
 

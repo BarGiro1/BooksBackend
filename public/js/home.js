@@ -118,23 +118,22 @@ $(document).ready(function () {
             }
         });
     });
-
-
-    $(document).on('click', '.add-to-cart-btn', function () {
+    $(document).on('click', '.add-to-cart-btn', function (event) {
+        event.preventDefault(); 
+        event.stopPropagation(); 
         const title = $(this).data('title');
         const author = $(this).data('author');
         const price = $(this).data('price');
         const id = $(this).data('id');
-        console.log(id)
 
         let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
         console.log('Cart before adding:', cart);
 
-        cart.push({ title, author, price ,id});
+        cart.push({ title, author, price, id });
 
         localStorage.setItem('cart', JSON.stringify(cart));
 
-        // alert(`${title} added to cart!`);
+        alert(`${title} added to cart!`);
     });
 });

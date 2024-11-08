@@ -4,7 +4,10 @@ $(document).ready(function () {
     function renderCart() {
         let html = '';
         let totalPrice = 0;
-
+        if  (!localStorage.token) {
+            alert("No token found! Please log in again.");
+            return; // Exit if there's no token
+        } 
         if (cart.length === 0) {
             html = `
                 <div class="alert alert-warning text-center" role="alert">

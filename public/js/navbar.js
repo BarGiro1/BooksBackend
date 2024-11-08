@@ -13,18 +13,19 @@ $(document).ready(function () {
 
     if (!validJWT) {
         $(".navbar-login").removeClass("d-none");
+        $(".navbar-loggedin, .navbar-logout, .navbar-catalog, .navbar-orders, .navbar-cart").addClass("d-none");
     } else {
-        $(".navbar-loggedin").removeClass("d-none")
-        $(".navbar-logout").removeClass("d-none")
-    }
+        $(".navbar-loggedin").removeClass("d-none");
+        $(".navbar-logout").removeClass("d-none");
+        $(".navbar-catalog, .navbar-orders, .navbar-cart").removeClass("d-none");
 
-    if (isAdmin) {
-        $(".navbar-admin").removeClass("d-none");
+        if (isAdmin) {
+            $(".navbar-admin").removeClass("d-none");
+        }
     }
 
     $('#logout').on('click', function () {
         localStorage.removeItem("token");
-        location.reload()
-
+        location.reload();
     });
 });
