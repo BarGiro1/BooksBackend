@@ -85,16 +85,16 @@ $(document).ready(function () {
         $.each(filteredBooks, function (index, book) { 
             html += `
                 <a href="book/${book._id}" class="text-decoration-none col-2 me-4 mb-4">
-                    <div class="card book-card">
+                    <div class="card book-card h-100">
                         <img src="/api/placeholder/400/300" class="card-img-top" alt="${book.name}">
-                        <div class="card-body">
+                        <div class="card-body d-flex flex-column justify-content-between">
                             <h5 class="card-title">${book.name}</h5>
                             <p class="card-text">Author: <span class="book-author">${book.author}</span></p>
                             <p class="card-text">Genres: ${book.genre.join(', ')}</p>
                             <p class="card-text">Year: ${book.publicationYear}</p>
                             <p class="card-text">Pages: ${book.numOfPages}</p>
                             <p class="card-text">Price: ${book.price}</p>
-                            <button class="add-to-cart-btn" data-price=${book.price} data-title="${book.name}" data-author="${book.author}" data-id="${book._id}">Add to Cart</button>
+                            <button class="btn btn-primary add-to-cart-btn" data-price=${book.price} data-title="${book.name}" data-author="${book.author}" data-id="${book._id}">Add to Cart</button>
 
                         </div>
                     </div>
