@@ -133,34 +133,48 @@ const getMonthlyOrders = async () => {
     }
 };
 
-const getSalesPerBook = async (bookId) => {
-    if (!bookId) {
-        throw new Error('Book ID is required');
-    }
-
+const getSalesPerBook = async () => {
     try {
-        // Aggregate to count the number of times the book has been ordered
-        const orderCount = await Order.aggregate([
+        // Aggregate to count the number of times each book has been ordered
+        const salesData = await Order.aggregate([
             {
                 $unwind: '$books' // Unwind the books array in each order
-            },
-            {
-                $match: {
-                    'books': new ObjectId(bookId) // Match the bookId in the orders
-                }
             },
             {
                 $group: {
                     _id: '$books', // Group by the bookId
                     count: { $sum: 1 } // Count the number of occurrences
                 }
+            },
+            {
+                $lookup: {
+                    from: 'books', // The collection to join with
+                    localField: '_id', // The field from the input documents
+                    foreignField: '_id', // The field from the documents of the "from" collection
+                    as: 'bookDetails' // The name of the new array field to add to the input documents
+                }
+            },
+            {
+                $unwind: '$bookDetails' // Unwind the bookDetails array to get a single object
+            },
+            {
+                $project: {
+                    _id: 0, // Exclude the _id field from the output
+                    bookName: '$bookDetails.name', // Include the book name
+                    count: 1 // Include the count
+                }
             }
         ]);
 
-        // Return the count of orders for the book
-        return orderCount.length > 0 ? orderCount[0].count : 0;
+        // Transform the result into an array of objects
+        const salesPerBook = salesData.map(({ bookName, count }) => ({
+            bookName,
+            count
+        }));
+
+        return salesPerBook;
     } catch (error) {
-        console.error('Error retrieving order count for the book: ', error);
+        console.error('Error retrieving sales data for books: ', error);
         throw new Error(error.message);
     }
 }

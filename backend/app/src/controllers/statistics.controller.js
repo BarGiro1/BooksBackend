@@ -29,8 +29,7 @@ const getOrdersByAuthor = async (req, res) => {
 
 const getSalesPerBook = async (req, res) => {
     try {
-        const bookId = req.params.bookId; 
-        const sales = await statisticsService.getSalesPerBook(bookId);
+        const sales = await statisticsService.getSalesPerBook();
         res.status(200).json(sales);
     } catch (error) {
         res.status(500).json({message: error.message});
