@@ -1,5 +1,6 @@
 const userServiceFunctionality = require('../functions/users.service');
 const jsonWebToken = require('jsonwebtoken');
+const User = require('../models/UserScheme');
 
 const getUserById = async (request, response) => {
     try {
@@ -21,7 +22,7 @@ const getAllUsers = async (request, response) => {
 
 const getUserByEmail = async (request, response) => {
     try {
-        const userEntity = await userServiceFunctionality.getUserByEmail(request.body.email);
+        const userEntity = await userServiceFunctionality.getUserByEmail(request.params.email);
         response.status(200).json(userEntity);
     } catch (errorInstance) {
         response.status(500).json({ message: errorInstance.message });
@@ -50,6 +51,21 @@ const getUserDetails = async (request, response) => {
         response.status(500).json({ message: errorInstance.message });
     }
 }
+
+const createAdmin = async (request, response) => {
+    try {
+        admin = new User({
+            name: 'admin',
+            email: 'admin@gmail.com',
+            password: 'admin',
+            isAdmin: true
+        })
+        await admin.save();
+    } catch (errorInstance) {
+        response.status(500).json({ message: errorInstance.message });
+    }
+}
+
 
 const createUser = async (request, response) => {
     try {
@@ -183,5 +199,6 @@ module.exports = {
     addBookToUser,
     removeBookFromUser,
     userLogin,
-    isBookExist
+    isBookExist,
+    createAdmin
 }

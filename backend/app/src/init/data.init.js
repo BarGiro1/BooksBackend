@@ -26,20 +26,32 @@ const sendRequest = (method, url, data = null) => {
 
 const addData = async () => {
 try {
+    await sendRequest('POST', 'auth/createAdmin');
+
     await sendRequest('POST', 'auth/register',
         {
-            "name": "admin",
-            "email": "admin@gmail.com",
-            "password": "pa$$word"
+            "name": "User",
+            "email": "user@gmail.com",
+            "password": "12345678"
         }
     );
 
     response = await sendRequest('POST', 'auth/login',
         {
             "email": "admin@gmail.com",
-            "password": "pa$$word"
+            "password": "admin"
         }
     );
+    adminToken = response.token;
+
+    response = await sendRequest('POST', 'auth/login',
+        {
+            "email": "user@gmail.com",
+            "password": "12345678"
+        }
+    );
+    userToken = response.token;
+
     
     await sendRequest('POST', 'admin/books/create',
         {
@@ -52,7 +64,8 @@ try {
                 ],
                 "numOfPages": 309,
                 "price": 120
-            }
+            },
+            "token": adminToken
         }
     );
     
@@ -67,7 +80,8 @@ try {
                 ],
                 "numOfPages": 341,
                 "price": 120
-            }
+            },
+            "token": adminToken
         }
     );
     
@@ -82,7 +96,8 @@ try {
                 ],
                 "numOfPages": 503,
                 "price": 130
-            }
+            },
+            "token": adminToken
         }
     );
     
@@ -97,7 +112,8 @@ try {
                 ],
                 "numOfPages": 328,
                 "price": 100
-            }
+            },
+            "token": adminToken
         }
     );
     
@@ -112,7 +128,8 @@ try {
                 ],
                 "numOfPages": 112,
                 "price": 90
-            }
+            },
+            "token": adminToken
         }
     );
     
@@ -127,7 +144,8 @@ try {
                 ],
                 "numOfPages": 228,
                 "price": 95
-            }
+            },
+            "token": adminToken
         }
     );
     
@@ -142,7 +160,8 @@ try {
                 ],
                 "numOfPages": 279,
                 "price": 85
-            }
+            },
+            "token": adminToken
         }
     );
     
@@ -157,7 +176,8 @@ try {
                 ],
                 "numOfPages": 368,
                 "price": 80
-            }
+            },
+            "token": adminToken
         }
     );
     
@@ -172,16 +192,16 @@ try {
                 ],
                 "numOfPages": 474,
                 "price": 90
-            }
+            },
+            "token": adminToken
         }
     );
 
-    user_token = response.token;
     all_books_response = await sendRequest('GET', 'books')
     for (const book of all_books_response) {
         await sendRequest('POST', 'orders',
             {
-            "token": user_token,
+            "token": userToken,
             "order": { 
                 "books": [book._id]
                 }
