@@ -10,6 +10,7 @@ function fetchUsers() {
     $.ajax({
         type: "POST",
         url: "http://localhost:3001/admin/users",
+        data: {token: localStorage.token},
         success: function (response) {
             console.log(response);
             response.forEach(function(user) {
@@ -130,6 +131,7 @@ function deleteUser(userId, row) {
     $.ajax({
         type: "DELETE",
         url: `http://localhost:3001/admin/users/${userId}`,
+        data: {token: localStorage.token},
         success: function (response) {
             console.log(response);
             row.remove();

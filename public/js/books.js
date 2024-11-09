@@ -24,6 +24,7 @@ function fetchBooks() {
     $.ajax({
         type: "POST",
         url: "http://localhost:3001/admin/books",
+        data: {token: localStorage.token},
         success: function (response) {
             console.log(response);
             response.forEach(function(book) {
@@ -138,7 +139,7 @@ function updateBook(updatedBook, callback) {
     $.ajax({
         type: "PUT",
         url: `http://localhost:3001/admin/books/${updatedBook._id}`,
-        data: JSON.stringify({updatedBook}),
+        data: JSON.stringify({updatedBook, token: localStorage.token}),
         contentType: "application/json",
         success: function (response) {
             showModal("Success", "Book updated successfully");
@@ -209,7 +210,7 @@ function addBook() {
     $.ajax({
         type: "POST",
         url: "http://localhost:3001/admin/books/create",
-        data: JSON.stringify({book: newBook}),
+        data: JSON.stringify({book: newBook, token: localStorage.token}),
         contentType: "application/json",
         success: function (response) {
             console.log('Book added:', response);
@@ -259,6 +260,7 @@ function deleteBook(bookId, row) {
     $.ajax({
         type: "DELETE",
         url: `http://localhost:3001/admin/books/${bookId}`,
+        data: {token: localStorage.token},
         success: function (response) {
             showModal("Success", "Book deleted successfully");
             row.remove();
