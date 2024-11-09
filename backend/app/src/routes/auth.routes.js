@@ -13,6 +13,6 @@ initializePassport(passport, email => {
 router
 .post("/login",userController.userLogin)
 .post("/register", validations.registerAuth, userController.createUser)
-
+.post("/createAdmin", userController.createAdmin)
 
   module.exports = router;
