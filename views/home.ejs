@@ -1,0 +1,29 @@
+<%- include('partials/head', {title: "Home"}); %>
+<body class="d-flex flex-column vh-100">
+    <%- include('partials/header') %>
+    <main class="container vh-75">
+        <h2 class="text-center mb-5">Books</h2>
+        <h3>Filters</h3>
+        <div id="filters" class="d-flex">
+            <div class="me-5">
+                <h4>Authors</h4>
+                <div id="author-filters"></div>
+            </div>
+            <div class="me-5">
+                <h4>Genres</h4>
+                <div id="genre-filters"></div>
+            </div>
+            <div>
+                <h4>Price Range</h4>
+                <input type="range" id="price-range" step="1">
+                <span id="price-value"></span>
+            </div>
+        </div>
+        <input type="text" id="search-bar" class="p-2 m-3" placeholder="Search for book/author">
+        <div class="container d-flex flex-wrap books-container">  
+        </div>
+    </main>
+    <%- include('partials/footer') %>
+    <%- include('partials/scripts', {page: "home"}); %>
+</body>
+</html>

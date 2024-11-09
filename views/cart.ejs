@@ -1,0 +1,16 @@
+<%- include('partials/head', {title: "Shopping Cart"}); %>
+
+<body class="d-flex flex-column vh-100">
+    <%- include('partials/header') %> 
+    <main class="container vh-75 mt-5">
+        <h1 class="text-center mb-4">Shopping Cart</h1>
+        <div id="cart-items" class="list-group"></div>
+        <div class="cart-summary text-end mt-5">
+            <h3>Total: $<span id="total-price">0.00</span></h3>
+            <button id="checkout-btn" class="btn btn-success btn-lg mt-3">Checkout</button>
+        </div>
+    </main>
+    <%- include('partials/footer') %> 
+    <%- include('partials/scripts', {page: "cart"}); %>
+</body>
+</html>
