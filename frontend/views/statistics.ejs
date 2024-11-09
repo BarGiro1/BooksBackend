@@ -1,0 +1,14 @@
+<%- include('partials/head', {title: "Statistics"}); %>
+<body class="d-flex flex-column vh-100">
+    <%- include('partials/header') %>
+    <main class="container-fluid vh-75 flex ">
+        <h5 class="text-center">Statistics Panel</h5>
+        <div class="d-flex">
+            <svg class="orders-per-month flex-grow-1" width="800" height="800"></svg>
+            <svg class="sales-per-book flex-grow-1" width="800" height="800"></svg>
+        </div>
+    </main>
+    <%- include('partials/footer') %>
+    <%- include('partials/scripts', {page: "statistics"}); %>
+</body>
+</html>
