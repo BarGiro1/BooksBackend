@@ -1,10 +1,10 @@
-const Order = require('../models/OrderSchema'); // Adjust the path if needed
-
+const Order = require('../models/OrderSchema');
+const { Types: { ObjectId } } = require('mongoose');
 
 const getLastTenDaysSales = async () => {
     try {
         const tenDaysAgo = new Date();
-        tenDaysAgo.setDate(tenDaysAgo.getDate() - 1000);  // Get the date 10 days ago
+        tenDaysAgo.setDate(tenDaysAgo.getDate() - 10);  // Get the date 10 days ago
 
         // Aggregate orders from the last 10 days
         const sales = await Order.aggregate([
@@ -106,7 +106,7 @@ const getOrdersByAuthor = async (author) => {
 };
 
 
- const getMonthlyOrders = async () => {
+const getMonthlyOrders = async () => {
     try {
         const sales = await Order.aggregate([
             {
@@ -133,50 +133,37 @@ const getOrdersByAuthor = async (author) => {
     }
 };
 
-
-
-
 const getSalesPerBook = async (bookId) => {
     if (!bookId) {
         throw new Error('Book ID is required');
     }
 
     try {
-        // Assuming you want to aggregate sales data for a specific book
-        const sales = await Order.aggregate([
+        // Aggregate to count the number of times the book has been ordered
+        const orderCount = await Order.aggregate([
             {
-                $lookup: {
-                    from: 'books', // Join with the books collection
-                    localField: 'books',
-                    foreignField: '_id',
-                    as: 'orderedBooks'
-                }
-            },
-            {
-                $unwind: '$orderedBooks' // Flatten the array of ordered books
+                $unwind: '$books' // Unwind the books array in each order
             },
             {
                 $match: {
-                    'orderedBooks._id': bookId // Match the bookId in the orders
+                    'books': new ObjectId(bookId) // Match the bookId in the orders
                 }
             },
             {
                 $group: {
-                    _id: '$orderedBooks._id', // Group by the bookId
-                    totalSales: { $sum: '$totalPrice' }, // Calculate total sales
-                    bookTitle: { $first: '$orderedBooks.title' } // Return the book title
+                    _id: '$books', // Group by the bookId
+                    count: { $sum: 1 } // Count the number of occurrences
                 }
             }
         ]);
 
-        return sales; // Return the sales data
+        // Return the count of orders for the book
+        return orderCount.length > 0 ? orderCount[0].count : 0;
     } catch (error) {
-        console.error('Error retrieving sales for the book: ', error);
+        console.error('Error retrieving order count for the book: ', error);
         throw new Error(error.message);
     }
 }
-
-
 
 module.exports = {
     getMonthlyAveragePurchases,
@@ -184,5 +171,4 @@ module.exports = {
     getSalesPerBook,
     getLastTenDaysSales,
     getMonthlyOrders
-    
 }
