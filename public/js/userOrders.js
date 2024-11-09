@@ -1,16 +1,20 @@
 $(document).ready(function () {
+    userID = jwtDecodeAndValidate(localStorage.token).payload.id
+    console.log(userID);
+    
     $.ajax({
-        url: "http://localhost:3001/orders", 
+        url: `http://localhost:3001/orders/user/${userID}`, 
         type: "GET",
         success: function(orders) {
             console.log(orders);
             orders.forEach(order => {
                 $.ajax({
-                    url: `http://localhost:3001/users/${order.user}`,
+                    url: `http://localhost:3001/orders/${order._id}`,
                     type: "GET",
                     success: function(user) {
+                        date = new Date(order.date).toISOString().slice(0, 16).replace('T', ' ');
                         let orderLink = $('<a class="nav-link"></a>');
-                        orderLink.text(`User: ${user.name}`);
+                        orderLink.text(`${date}`);
                         orderLink.attr('data-order-id', order._id);
 
                         $('#orderNav').append(orderLink);
@@ -106,6 +110,22 @@ $(document).ready(function () {
             },
             error: function(jqXHR, textStatus, errorThrown) {
                 showModal("Error Fetching User", `Error fetching user: ${textStatus} - ${errorThrown}`);
+            }
+        });
+    }
+
+    function removeBookFromOrder(orderId, bookId) {
+        $.ajax({
+            url: `http://localhost:3001/orders/${orderId}/remove-book`,
+            type: "POST",
+            contentType: "application/json",
+            data: JSON.stringify({ bookId: bookId }),
+            success: function(updatedOrder) {
+                // Refresh the order details
+                displayOrderDetails(updatedOrder);
+            },
+            error: function(jqXHR, textStatus, errorThrown) {
+                showModal("Error Removing Book", `Error removing book from order: ${textStatus} - ${errorThrown}`);
             }
         });
     }

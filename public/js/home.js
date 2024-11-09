@@ -93,8 +93,8 @@ $(document).ready(function () {
                             <p class="card-text">Genres: ${book.genre.join(', ')}</p>
                             <p class="card-text">Year: ${book.publicationYear}</p>
                             <p class="card-text">Pages: ${book.numOfPages}</p>
-                            <p class="card-text">Price: ${book.price}</p>
-                            <button class="btn btn-primary add-to-cart-btn" data-price=${book.price} data-title="${book.name}" data-author="${book.author}" data-id="${book._id}">Add to Cart</button>
+                            <p class="card-text">Price: $${book.price}</p>
+                            <button class="btn btn-primary add-to-cart-btn w-75 align-self-center" data-price=${book.price} data-title="${book.name}" data-author="${book.author}" data-id="${book._id}">Add to Cart</button>
 
                         </div>
                     </div>

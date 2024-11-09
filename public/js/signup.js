@@ -51,19 +51,4 @@ $(document).ready(function () {
             },
         });
     });
-
-    function showModal(title, message) {
-        $("#messageModal .modal-title").text(title);
-        $("#modalMessage").text(message);
-        $("#messageModal").modal("show");
-    }
-
-    $("#messageModal").on("click", function (e) {
-        if (e.target !== this) return;
-        $(this).modal("hide");
-    });
-
-    $(".modal .close, .modal .btn-secondary").on("click", function () {
-        $("#messageModal").modal("hide");
-    });
 });

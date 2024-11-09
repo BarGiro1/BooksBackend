@@ -1,0 +1,17 @@
+<%- include('partials/head', {title: "Orders"}); %>
+<body class="d-flex flex-column vh-100">
+    <%- include('partials/header') %>
+    <main class="container vh-75 flex">
+        <h5 class="text-center">Orders Panel</h5>
+        <div class="d-flex">
+        <nav class="nav nav-tabs flex-column col-2 border me-3" id="orderNav">
+
+        </nav>
+        <div class="container col-10 border" id="orderDetails">
+            
+        </div>
+    </main>
+    <%- include('partials/footer') %>
+    <%- include('partials/scripts', {page: "userOrders"}); %>
+</body>
+</html>

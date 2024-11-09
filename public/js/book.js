@@ -14,6 +14,12 @@ $(document).ready(function() {
             $('#bookGenre').html(book.genre.map(g => `<span class="badge bg-secondary me-1 genre-badge">${g}</span>`).join(''));
             $('#bookPages').text(`${book.numOfPages} pages`);
             $('#bookPrice').text(`${book.price.toFixed(2)} $`);
+            $('.add-to-cart-btn').attr({
+                'data-price': book.price,
+                'data-title': book.name,
+                'data-author': book.author,
+                'data-id': book._id
+              });
         },
         error: function(xhr, status, error) {
             $('#loading').addClass('d-none');
@@ -21,16 +27,23 @@ $(document).ready(function() {
         }
     });
 
-    $("#add-to-cart").on(click, function () {
-        $.ajax({
-            type: "method",
-            url: "url",
-            data: "data",
-            dataType: "dataType",
-            success: function (response) {
-                
-            }
-        });
+    $(document).on('click', '.add-to-cart-btn', function (event) {
+        event.preventDefault(); 
+        event.stopPropagation(); 
+        const title = $(this).data('title');
+        const author = $(this).data('author');
+        const price = $(this).data('price');
+        const id = $(this).data('id');
+
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+        console.log('Cart before adding:', cart);
+
+        cart.push({ title, author, price, id });
+
+        localStorage.setItem('cart', JSON.stringify(cart));
+
+        alert(`${title} added to cart!`);
     });
 
 });

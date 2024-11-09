@@ -39,12 +39,20 @@ app.get("/admin/statistics", (req, res) => {
     res.render("statistics");
 });
   
+app.get('/admin/branches', (req, res) => {
+    res.render('branches');
+});
+
 app.get('/cart', (req, res) => {
     res.render('cart');
 });
 
 app.get('/order', (req, res) => {
     res.render('order');
+});
+
+app.get('/orders', (req, res) => {
+    res.render('userOrders');
 });
 
 const mapRoutes = require('./routes/map');
