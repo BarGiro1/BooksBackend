@@ -24,7 +24,7 @@ router.get('/map', (req, res) => {
                 console.log("Fetched stores:", stores); 
                 res.render('map', { 
                     stores: stores,
-                    googleMapKey: "AIzaSyC_WJEHWBzpCjP_bpydsBWzxXForg-eBAQ",
+                    googleMapKey: "keykey",
                     googleMapId: "ea2ec92766f63409" 
                 });
 
