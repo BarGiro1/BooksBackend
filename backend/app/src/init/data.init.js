@@ -164,7 +164,34 @@ try {
             "token": adminToken
         }
     );
-    
+    await sendRequest('POST', 'branches',
+        {
+            "name": "Books store 3",
+            address: {
+                "country": "Israel",
+                "city": "Tel Aviv",
+                "street": "Azriellie Center Mall Tel Aviv",
+                "longitude": 32.074773,
+                "latitude": 34.7918125
+            },
+            "token": adminToken
+        }
+
+    );
+    await sendRequest('POST', 'branches',
+        {
+            "name": "Books store 4",
+            address: {
+                "country": "Israel",
+                "city": "Rishon Lezzion",
+                "street": "Rishonim Mall Tel Aviv",
+                "longitude": 34.8004711,
+                "latitude": 31.9494315
+            },
+            "token": adminToken
+        }
+
+    );
     await sendRequest('POST', 'admin/books/create',
         {
             "book": {

@@ -5,93 +5,54 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Store Locations</title>
     <style>
-        #container {
-            display: flex;
-            gap: 20px;
-        }
-        #map {
+        #google_map {
             height: 500px;
-            width: 70%;
-        }
-        #store-info {
-            width: 30%;
-            max-height: 500px;
-            overflow-y: auto;
-            border: 1px solid #ccc;
-            padding: 10px;
-        }
-        .store-item {
-            margin-bottom: 20px;
-            padding: 10px;
-            border-bottom: 1px solid #ddd;
+            width: 100%;
         }
     </style>
 </head>
 <body>
-    <h1 class="text-center">Our Store Locations</h1>
+    <h1 class="text-center">Our Stores Locations</h1>
+    <div id="google_map"></div>
 
-    <!-- Container for map and store information -->
-    <div id="container">
-        <div id="map"></div>
-        <div id="store-info">
-            <h2>Store Information</h2>
-            <!-- Store details will be inserted here -->
-        </div>
-    </div>
-
-    <!-- Google Maps API with your API key and callback to loadMap -->
-    <script src="https://maps.googleapis.com/maps/api/js?key=<%= googleMapKey %>&callback=loadMap&loading=async&libraries=marker" defer></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=<%= googleMapKey %>&loading=async&callback=initMap&libraries=marker"></script>
 
     <script>
-        function loadMap() {
-            const defaultCenter = { lat: 37.7749, lng: -122.4194 };
-            const map = new google.maps.Map(document.getElementById('map'), {
+        const stores = JSON.parse('<%- JSON.stringify(stores) %>');
+        console.log("Stores data:", stores); 
+    
+        function initMap() {
+            const defaultCenter = { lat: 32.321457, lng: 34.853195 }; // Default center
+            const map = new google.maps.Map(document.getElementById('google_map'), {
                 center: defaultCenter,
                 zoom: 5,
                 mapId: '<%= googleMapId %>'
             });
 
-            // Fetch store data from /api/branches
-            fetch('http://localhost:3001/branches')
-                .then(response => response.json())
-                .then(stores => {
-                    console.log("Fetched stores data:", stores); // Log the store data to console
+            stores.forEach(store => {
+                if (store.address.latitude && store.address.longitude) {
+                    const position = {
+                        lat: parseFloat(store.address.latitude),
+                        lng: parseFloat(store.address.longitude)
+                    };
 
-                    // Populate the map with markers and the store info panel with details
-                    const storeInfoContainer = document.getElementById('store-info');
-                    
-                    stores.forEach(store => {
-                        // Create a map marker
-                        console.log(store.address.latitude)
-                        advancedMarker = new google.maps.marker.AdvancedMarkerElement({
-                            position: { lat: store.address.latitude, lng: store.address.longitude },
-                            map: map,
-                            title: store.name
-                        });
-
-                        // Create an info window for each marker
-                        const infoWindow = new google.maps.InfoWindow({
-                            content: `<h4>${store.name}</h4><p>${store.address.street}, ${store.address.city}, ${store.address.country}</p>`
-                        });
-
-                        advancedMarker.addListener('click', function() {
-                        infoWindow.open(map, advancedMarker);
+                    const marker = new google.maps.marker.AdvancedMarkerElement({
+                        position: position,
+                        map: map,
+                        title: store.name
                     });
 
-                        // Add store details to the store-info container
-                        const storeItem = document.createElement('div');
-                        storeItem.classList.add('store-item');
-                        storeItem.innerHTML = `
-                            <h4>${store.name}</h4>
-                            <p>Address: ${store.address.street}, ${store.address.city}, ${store.address.country}</p>
-                            <p>Coordinates: (${store.address.latitude}, ${store.address.longitude})</p>
-                        `;
-                        storeInfoContainer.appendChild(storeItem);
+                    const infoWindow = new google.maps.InfoWindow({
+                        content: `<h4>${store.name}</h4><p>${store.address.street}, ${store.address.city}, ${store.address.country}</p>`
                     });
-                })
-                .catch(error => {
-                    console.error("Error fetching stores:", error);
-                });
+
+                    marker.addListener('click', function() {
+                        infoWindow.open(map, marker);
+                    });
+                } else {
+                    console.error("Invalid coordinates for store:", store.name);
+                }
+            });
         }
     </script>
 </body>
