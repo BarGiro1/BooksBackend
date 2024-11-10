@@ -32,5 +32,8 @@ services:
     command: npm run dev
     depends_on:
       - books-app
+    environment:
+      googleMapKey: "AIzaSyAwkL4wQeTvdZfe0xq16WcniEy15i7V4Pg"
+      googleMapId: ea2ec92766f63409
 volumes:
   mongo_data:
