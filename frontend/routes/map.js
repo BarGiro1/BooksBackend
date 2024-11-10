@@ -24,7 +24,7 @@ router.get('/map', async (req, res) => {
 function fetchStoresData() {
     return new Promise((resolve, reject) => {
         const options = {
-            hostname: 'booksbackend-books-app-1',
+            hostname: 'backend',
             port: 3001,
             path: '/branches',
             method: 'GET'
