@@ -3,56 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Store Locations</title>
-    <style>
-        #google_map {
-            height: 500px;
-            width: 100%;
-        }
-    </style>
+    <title>Store Locations with Weather</title>
 </head>
 <body>
-    <h1 class="text-center">Our Stores Locations</h1>
-    <div id="google_map"></div>
+    <h1>Our Store Locations with Weather</h1>
+    <div id="google_map" style="height: 500px; width: 100%;"></div>
 
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=<%= googleMapKey %>&loading=async&callback=initMap&libraries=marker"></script>
+    <!-- Load Google Maps API -->
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=<%= googleMapKey %>&callback=initMap"></script>
 
     <script>
         const stores = JSON.parse('<%- JSON.stringify(stores) %>');
-        console.log("Stores data:", stores); 
-    
+
         function initMap() {
-            const defaultCenter = { lat: 32.321457, lng: 34.853195 }; // Default center
-            const map = new google.maps.Map(document.getElementById('google_map'), {
-                center: defaultCenter,
-                zoom: 5,
-                mapId: '<%= googleMapId %>'
+            const map = new google.maps.Map(document.getElementById("google_map"), {
+                center: { lat: 32.0853, lng: 34.7818 }, // Centered on Tel Aviv, Israel
+                zoom: 8
             });
 
             stores.forEach(store => {
-                if (store.address.latitude && store.address.longitude) {
-                    const position = {
-                        lat: parseFloat(store.address.latitude),
-                        lng: parseFloat(store.address.longitude)
-                    };
+                const position = {
+                    lat: parseFloat(store.address.latitude),
+                    lng: parseFloat(store.address.longitude)
+                };
 
-                    const marker = new google.maps.marker.AdvancedMarkerElement({
+                // Fetch the weather for the store location
+                fetchWeatherData(position.lat, position.lng).then(weather => {
+                    // Create a marker for each store
+                    const marker = new google.maps.Marker({
                         position: position,
                         map: map,
-                        title: store.name
+                        title: `${store.name} - ${weather}°C`
                     });
 
+                    // Display the store name and weather in an info window
                     const infoWindow = new google.maps.InfoWindow({
-                        content: `<h4>${store.name}</h4><p>${store.address.street}, ${store.address.city}, ${store.address.country}</p>`
+                        content: `<h4>${store.name}</h4><p>Temperature: ${weather}°C</p>`
                     });
 
-                    marker.addListener('click', function() {
+                    marker.addListener("click", function() {
                         infoWindow.open(map, marker);
                     });
-                } else {
-                    console.error("Invalid coordinates for store:", store.name);
-                }
+                }).catch(error => {
+                    console.error("Error fetching weather data:", error);
+                });
             });
+        }
+
+        async function fetchWeatherData(lat, lng) {
+            const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?lon=12.00&lat=12.22&appid=25118ce2a8f92206d7d85a52bca0cc4b&units=metric`, {
+                method: 'GET',
+            });
+            const data = await response.json();
+            console.log(data.weather.main)
+            // Modify according to API response structure to get temperature
+            return data.weather.main;
         }
     </script>
 </body>
