@@ -8,16 +8,17 @@
 <body>
     <h1>Our Store Locations with Weather</h1>
     <div id="google_map" style="height: 500px; width: 100%;"></div>
-
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=<%= googleMapKey %>&callback=initMap"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=<%= googleMapKey %>&loading=async&callback=initMap&libraries=marker"></script>
 
     <script>
         const stores = JSON.parse('<%- JSON.stringify(stores) %>');
 
         function initMap() {
-            const map = new google.maps.Map(document.getElementById("google_map"), {
-                center: { lat: 32.0853, lng: 34.7818 }, 
-                zoom: 8
+            const defaultCenter = { lat: 32.321457, lng: 34.853195 }; // Default center
+            const map = new google.maps.Map(document.getElementById('google_map'), {
+                center: defaultCenter,
+                zoom: 5,
+                mapId: '<%= googleMapId %>'
             });
 
             stores.forEach(store => {
@@ -30,11 +31,11 @@
                     const marker = new google.maps.Marker({
                         position: position,
                         map: map,
-                        title: `${store.name} - ${weather}°C`
+                        title: `${store.name} - ${weather}`
                     });
 
                     const infoWindow = new google.maps.InfoWindow({
-                        content: `<h4>${store.name}</h4><p>Temperature: ${weather}°C</p>`
+                        content: `<h4>${store.name}</h4><p>Temperature: ${weather}</p>`
                     });
 
                     marker.addListener("click", function() {
