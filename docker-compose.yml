@@ -9,6 +9,7 @@ services:
       - mongo_data:/data/db
 
   books-app:
+    container_name: backend
     image: node:latest
     ports:
       - "3001:3001"
